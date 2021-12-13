@@ -1,0 +1,46 @@
+/*
+Error: Invalid CSS after "mytheme: sea": expected "{", was ";"
+        on line 11 of html/CSS/sass/sass/grid.scss
+
+6:         display: block;
+7:     }
+8: }
+9: 
+10: // --------
+11: mytheme: sea;
+12: @mixin theme($theme: DarkGray) {
+13:     background: $theme;
+14:     box-shadow: 0 0 1px rgba($theme, .25);
+15:     color: #fff;
+16: }
+
+Backtrace:
+html/CSS/sass/sass/grid.scss:11
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1308:in `expected'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1238:in `expected'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1233:in `tok!'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:688:in `block'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:681:in `ruleset'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:707:in `block_child'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:700:in `block_contents'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:137:in `stylesheet'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:41:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:414:in `_to_tree'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:389:in `_render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:307:in `render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:209:in `each'
+/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:294:in `watch'
+/usr/lib/ruby/vendor_ruby/sass/plugin.rb:109:in `method_missing'
+/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:354:in `watch_or_update'
+/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:51:in `process_result'
+/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:50:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:18:in `parse!'
+/usr/bin/sass:8:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"mytheme: sea\": expected \"{\", was \";\"\A         on line 11 of html/CSS/sass/sass/grid.scss\A \A 6:         display: block;\A 7:     }\A 8: }\A 9: \A 10: // --------\A 11: mytheme: sea;\A 12: @mixin theme($theme: DarkGray) {\A 13:     background: $theme;\A 14:     box-shadow: 0 0 1px rgba($theme, .25);\A 15:     color: #fff;\A 16: }"; }

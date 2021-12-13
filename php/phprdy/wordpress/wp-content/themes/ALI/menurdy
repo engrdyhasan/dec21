@@ -1,0 +1,619 @@
+[01]
+wp_nav_menu( $args );
+
+[02]
+function wp_nav_menu( $args = array() ) {
+    static $menu_id_slugs = array();
+ 
+    $defaults = array(
+        'menu'                 => '',
+        'container'            => 'div',
+        'container_class'      => '',
+        'container_id'         => '',
+        'container_aria_label' => '',
+        'menu_class'           => 'menu',
+        'menu_id'              => '',
+        'echo'                 => true,
+        'fallback_cb'          => 'wp_page_menu',
+        'before'               => '',
+        'after'                => '',
+        'link_before'          => '',
+        'link_after'           => '',
+        'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+        'item_spacing'         => 'preserve',
+        'depth'                => 0,
+        'walker'               => '',
+        'theme_location'       => '',
+    );
+ 
+    $args = wp_parse_args( $args, $defaults );
+ 
+    if ( ! in_array( $args['item_spacing'], array( 'preserve', 'discard' ), true ) ) {
+        // Invalid value, fall back to default.
+        $args['item_spacing'] = $defaults['item_spacing'];
+    }
+ 
+    /**
+     * Filters the arguments used to display a navigation menu.
+     *
+     * @since 3.0.0
+     *
+     * @see wp_nav_menu()
+     *
+     * @param array $args Array of wp_nav_menu() arguments.
+     */
+    $args = apply_filters( 'wp_nav_menu_args', $args );
+    $args = (object) $args;
+ 
+    /**
+     * Filters whether to short-circuit the wp_nav_menu() output.
+     *
+     * Returning a non-null value from the filter will short-circuit wp_nav_menu(),
+     * echoing that value if $args->echo is true, returning that value otherwise.
+     *
+     * @since 3.9.0
+     *
+     * @see wp_nav_menu()
+     *
+     * @param string|null $output Nav menu output to short-circuit with. Default null.
+     * @param stdClass    $args   An object containing wp_nav_menu() arguments.
+     */
+    $nav_menu = apply_filters( 'pre_wp_nav_menu', null, $args );
+ 
+    if ( null !== $nav_menu ) {
+        if ( $args->echo ) {
+            echo $nav_menu;
+            return;
+        }
+ 
+        return $nav_menu;
+    }
+ 
+    // Get the nav menu based on the requested menu.
+    $menu = wp_get_nav_menu_object( $args->menu );
+ 
+    // Get the nav menu based on the theme_location.
+    $locations = get_nav_menu_locations();
+    if ( ! $menu && $args->theme_location && $locations && isset( $locations[ $args->theme_location ] ) ) {
+        $menu = wp_get_nav_menu_object( $locations[ $args->theme_location ] );
+    }
+ 
+    // Get the first menu that has items if we still can't find a menu.
+    if ( ! $menu && ! $args->theme_location ) {
+        $menus = wp_get_nav_menus();
+        foreach ( $menus as $menu_maybe ) {
+            $menu_items = wp_get_nav_menu_items( $menu_maybe->term_id, array( 'update_post_term_cache' => false ) );
+            if ( $menu_items ) {
+                $menu = $menu_maybe;
+                break;
+            }
+        }
+    }
+ 
+    if ( empty( $args->menu ) ) {
+        $args->menu = $menu;
+    }
+ 
+    // If the menu exists, get its items.
+    if ( $menu && ! is_wp_error( $menu ) && ! isset( $menu_items ) ) {
+        $menu_items = wp_get_nav_menu_items( $menu->term_id, array( 'update_post_term_cache' => false ) );
+    }
+ 
+    /*
+     * If no menu was found:
+     *  - Fall back (if one was specified), or bail.
+     *
+     * If no menu items were found:
+     *  - Fall back, but only if no theme location was specified.
+     *  - Otherwise, bail.
+     */
+    if ( ( ! $menu || is_wp_error( $menu ) || ( isset( $menu_items ) && empty( $menu_items ) && ! $args->theme_location ) )
+        && isset( $args->fallback_cb ) && $args->fallback_cb && is_callable( $args->fallback_cb ) ) {
+            return call_user_func( $args->fallback_cb, (array) $args );
+    }
+ 
+    if ( ! $menu || is_wp_error( $menu ) ) {
+        return false;
+    }
+ 
+    $nav_menu = '';
+    $items    = '';
+ 
+    $show_container = false;
+    if ( $args->container ) {
+        /**
+         * Filters the list of HTML tags that are valid for use as menu containers.
+         *
+         * @since 3.0.0
+         *
+         * @param string[] $tags The acceptable HTML tags for use as menu containers.
+         *                       Default is array containing 'div' and 'nav'.
+         */
+        $allowed_tags = apply_filters( 'wp_nav_menu_container_allowedtags', array( 'div', 'nav' ) );
+ 
+        if ( is_string( $args->container ) && in_array( $args->container, $allowed_tags, true ) ) {
+            $show_container = true;
+            $class          = $args->container_class ? ' class="' . esc_attr( $args->container_class ) . '"' : ' class="menu-' . $menu->slug . '-container"';
+            $id             = $args->container_id ? ' id="' . esc_attr( $args->container_id ) . '"' : '';
+            $aria_label     = ( 'nav' === $args->container && $args->container_aria_label ) ? ' aria-label="' . esc_attr( $args->container_aria_label ) . '"' : '';
+            $nav_menu      .= '<' . $args->container . $id . $class . $aria_label . '>';
+        }
+    }
+ 
+    // Set up the $menu_item variables.
+    _wp_menu_item_classes_by_context( $menu_items );
+ 
+    $sorted_menu_items        = array();
+    $menu_items_with_children = array();
+    foreach ( (array) $menu_items as $menu_item ) {
+        $sorted_menu_items[ $menu_item->menu_order ] = $menu_item;
+        if ( $menu_item->menu_item_parent ) {
+            $menu_items_with_children[ $menu_item->menu_item_parent ] = true;
+        }
+    }
+ 
+    // Add the menu-item-has-children class where applicable.
+    if ( $menu_items_with_children ) {
+        foreach ( $sorted_menu_items as &$menu_item ) {
+            if ( isset( $menu_items_with_children[ $menu_item->ID ] ) ) {
+                $menu_item->classes[] = 'menu-item-has-children';
+            }
+        }
+    }
+ 
+    unset( $menu_items, $menu_item );
+ 
+    /**
+     * Filters the sorted list of menu item objects before generating the menu's HTML.
+     *
+     * @since 3.1.0
+     *
+     * @param array    $sorted_menu_items The menu items, sorted by each menu item's menu order.
+     * @param stdClass $args              An object containing wp_nav_menu() arguments.
+     */
+    $sorted_menu_items = apply_filters( 'wp_nav_menu_objects', $sorted_menu_items, $args );
+ 
+    $items .= walk_nav_menu_tree( $sorted_menu_items, $args->depth, $args );
+    unset( $sorted_menu_items );
+ 
+    // Attributes.
+    if ( ! empty( $args->menu_id ) ) {
+        $wrap_id = $args->menu_id;
+    } else {
+        $wrap_id = 'menu-' . $menu->slug;
+ 
+        while ( in_array( $wrap_id, $menu_id_slugs, true ) ) {
+            if ( preg_match( '#-(\d+)$#', $wrap_id, $matches ) ) {
+                $wrap_id = preg_replace( '#-(\d+)$#', '-' . ++$matches[1], $wrap_id );
+            } else {
+                $wrap_id = $wrap_id . '-1';
+            }
+        }
+    }
+    $menu_id_slugs[] = $wrap_id;
+ 
+    $wrap_class = $args->menu_class ? $args->menu_class : '';
+ 
+    /**
+     * Filters the HTML list content for navigation menus.
+     *
+     * @since 3.0.0
+     *
+     * @see wp_nav_menu()
+     *
+     * @param string   $items The HTML list content for the menu items.
+     * @param stdClass $args  An object containing wp_nav_menu() arguments.
+     */
+    $items = apply_filters( 'wp_nav_menu_items', $items, $args );
+    /**
+     * Filters the HTML list content for a specific navigation menu.
+     *
+     * @since 3.0.0
+     *
+     * @see wp_nav_menu()
+     *
+     * @param string   $items The HTML list content for the menu items.
+     * @param stdClass $args  An object containing wp_nav_menu() arguments.
+     */
+    $items = apply_filters( "wp_nav_menu_{$menu->slug}_items", $items, $args );
+ 
+    // Don't print any markup if there are no items at this point.
+    if ( empty( $items ) ) {
+        return false;
+    }
+ 
+    $nav_menu .= sprintf( $args->items_wrap, esc_attr( $wrap_id ), esc_attr( $wrap_class ), $items );
+    unset( $items );
+ 
+    if ( $show_container ) {
+        $nav_menu .= '</' . $args->container . '>';
+    }
+ 
+    /**
+     * Filters the HTML content for navigation menus.
+     *
+     * @since 3.0.0
+     *
+     * @see wp_nav_menu()
+     *
+     * @param string   $nav_menu The HTML content for the navigation menu.
+     * @param stdClass $args     An object containing wp_nav_menu() arguments.
+     */
+    $nav_menu = apply_filters( 'wp_nav_menu', $nav_menu, $args );
+ 
+    if ( $args->echo ) {
+        echo $nav_menu;
+    } else {
+        return $nav_menu;
+    }
+}
+
+[81]
+<!-- Different menus for logged-in users
+This example would cause a menu to show for logged-in users and a different menu for users not logged-in. -->
+wp_nav_menu( array(
+    'theme_location' => is_user_logged_in() ? 'logged-in-menu' : 'logged-out-menu'
+) );
+
+[82]
+<!-- Here is the ready to use snippet (not a real contribution, more than anything else a shortcut): -->
+wp_nav_menu( array $args = array(
+    'menu'              => "", // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
+    'menu_class'        => "", // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
+    'menu_id'           => "", // (string) The ID that is applied to the ul element which forms the menu. Default is the menu slug, incremented.
+    'container'         => "", // (string) Whether to wrap the ul, and what to wrap it with. Default 'div'.
+    'container_class'   => "", // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
+    'container_id'      => "", // (string) The ID that is applied to the container.
+    'fallback_cb'       => "", // (callable|bool) If the menu doesn't exists, a callback function will fire. Default is 'wp_page_menu'. Set to false for no fallback.
+    'before'            => "", // (string) Text before the link markup.
+    'after'             => "", // (string) Text after the link markup.
+    'link_before'       => "", // (string) Text before the link text.
+    'link_after'        => "", // (string) Text after the link text.
+    'echo'              => "", // (bool) Whether to echo the menu or return it. Default true.
+    'depth'             => "", // (int) How many levels of the hierarchy are to be included. 0 means all. Default 0.
+    'walker'            => "", // (object) Instance of a custom walker class.
+    'theme_location'    => "", // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+    'items_wrap'        => "", // (string) How the list items should be wrapped. Default is a ul with an id and class. Uses printf() format with numbered placeholders.
+    'item_spacing'      => "", // (string) Whether to preserve whitespace within the menu's HTML. Accepts 'preserve' or 'discard'. Default 'preserve'.
+) );
+
+[83]
+<!-- Removing the ul wrap
+
+This example will remove the unordered list wrap around the list items. Replacing the wrap HTML with the %3$s specifier results in only outputting the HTML list content for the menu items, because items_wrap is built using sprintf()
+
+items_wrap default before: -->
+
+<ul id="%1$s" class="%2$s">%3$s</ul>
+<!-- items_wrap after:
+%3$s
+Example: -->
+wp_nav_menu( array( 'items_wrap' => '%3$s' ) );
+
+[84]
+<!--
+Using a Custom Walker Function
+
+For deeper conditional classes, you’ll need to use a custom walker function (created in the 'walker' => new Your_Walker_Function argument).
+
+The simplest way to build a new walker function is to copy and extend the default class (Walker_Nav_Menu) from /wp-includes/nav-menu-template.php and simply customize what you need.
+    
+Example:
+This custom walker function will add several conditional classes to your nav menu (i.e. sub-menu, even/odd, etc): -->
+wp_nav_menu( array(
+    'menu'   => 'Something custom walker',
+    'walker' => new WPDocs_Walker_Nav_Menu()
+) );
+ 
+/**
+ * Custom walker class.
+ */
+class WPDocs_Walker_Nav_Menu extends Walker_Nav_Menu {
+ 
+    /**
+     * Starts the list before the elements are added.
+     *
+     * Adds classes to the unordered list sub-menus.
+     *
+     * @param string $output Passed by reference. Used to append additional content.
+     * @param int    $depth  Depth of menu item. Used for padding.
+     * @param array  $args   An array of arguments. @see wp_nav_menu()
+     */
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        // Depth-dependent classes.
+        $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
+        $display_depth = ( $depth + 1); // because it counts the first submenu as 0
+        $classes = array(
+            'sub-menu',
+            ( $display_depth % 2  ? 'menu-odd' : 'menu-even' ),
+            ( $display_depth >=2 ? 'sub-sub-menu' : '' ),
+            'menu-depth-' . $display_depth
+        );
+        $class_names = implode( ' ', $classes );
+ 
+        // Build HTML for output.
+        $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
+    }
+ 
+    /**
+     * Start the element output.
+     *
+     * Adds main/sub-classes to the list items and links.
+     *
+     * @param string $output Passed by reference. Used to append additional content.
+     * @param object $item   Menu item data object.
+     * @param int    $depth  Depth of menu item. Used for padding.
+     * @param array  $args   An array of arguments. @see wp_nav_menu()
+     * @param int    $id     Current item ID.
+     */
+    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        global $wp_query;
+        $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
+ 
+        // Depth-dependent classes.
+        $depth_classes = array(
+            ( $depth == 0 ? 'main-menu-item' : 'sub-menu-item' ),
+            ( $depth >=2 ? 'sub-sub-menu-item' : '' ),
+            ( $depth % 2 ? 'menu-item-odd' : 'menu-item-even' ),
+            'menu-item-depth-' . $depth
+        );
+        $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
+ 
+        // Passed classes.
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
+ 
+        // Build HTML.
+        $output .= $indent . '<li id="nav-menu-item-'. $item->ID . '" class="' . $depth_class_names . ' ' . $class_names . '">';
+ 
+        // Link attributes.
+        $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+        $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+        $attributes .= ' class="menu-link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
+ 
+        // Build HTML output and pass through the proper filter.
+        $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+            $args->before,
+            $attributes,
+            $args->link_before,
+            apply_filters( 'the_title', $item->title, $item->ID ),
+            $args->link_after,
+            $args->after
+        );
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    }
+}
+
+[85]
+<!-- To clarify link_before vs before, and link_after vs after
+The link_before / link_after values are output WITHIN the link.
+Whereas, before / after values are output OUTSIDE of the link, but within the list item.
+For example: -->
+{before}{link_before}Link Text{link_after}{after}
+
+[86]
+<!-- Default example
+Shows the first non-empty menu or wp_page_menu(). -->
+
+<?php wp_nav_menu(); ?>
+
+[87]
+<!-- Targeting a specific menu with no fallback to wp_page_menu()
+
+In the case that no menu matching menu is found, it seems that passing a bogus theme_location is the only way to
+ prevent falling back to the first non-empty menu: -->
+wp_nav_menu( array(
+    'menu'           => 'Project Nav', // Do not fall back to first non-empty menu.
+    'theme_location' => '__no_such_location',
+    'fallback_cb'    => false // Do not fall back to wp_page_menu()
+) );
+
+[88]
+<!-- How to show a placeholder menu if no menu is set up
+
+Credit: Salcode.
+
+If you’ve just installed WordPress and activated a theme, there may not be a primary menu yet set up in
+Appearance > Menus. For these times you may want to show your own, placeholder, menu until that menu is set up.
+
+To do this, use the fallback callback function. Like so: -->
+wp_nav_menu( array( 'fallback_cb' => 'custom_primary_menu_fallback', 'menu' => 'menu', 'container' => false, 'menu_id' => 'menu', 'menu_class'=>'', 'theme_location'=>'primary-menu' ) );
+ 
+function custom_primary_menu_fallback() {
+  ?>
+  <ul id="menu"><li><a href="/">Home</a></li><li><a href="/wp-admin/nav-menus.php">Set primary menu</a></li></ul>
+  <?php
+}
+
+[89]
+<!-- Targeting a specific menu -->
+wp_nav_menu( array(
+    'menu' => 'Project Nav'
+) );
+
+[90]
+<!-- Adding Conditional Classes to Menu Items
+This example would let you add a custom class to a menu item based on the condition you specify. Don’t forget to change the condition.
+/**
+ * Filter the CSS class for a nav menu based on a condition.
+ *
+ * @param array  $classes The CSS classes that are applied to the menu item's <li> element.
+ * @param object $item    The current menu item.
+ * @return array (maybe) modified nav menu class.
+ */ -->
+function wpdocs_special_nav_class( $classes, $item ) {
+    if ( is_single() && 'Blog' == $item->title ) {
+        // Notice you can change the conditional from is_single() and $item->title
+        $classes[] = "special-class";
+    }
+    return $classes;
+}
+add_filter( 'nav_menu_css_class' , 'wpdocs_special_nav_class' , 10, 2 );
+
+[91]
+<!-- How to add a parent class for menu item
+Sometimes you may need to add a class to a menu item if it has sub-menus.
+
+/**
+* Add a parent CSS class for nav menu items.
+*
+* @param array  $items The menu items, sorted by each menu item's menu order.
+* @return array (maybe) modified parent CSS class.
+*/
+-->
+function wpdocs_add_menu_parent_class( $items ) {
+    $parents = array();
+ 
+    // Collect menu items with parents.
+    foreach ( $items as $item ) {
+        if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
+            $parents[] = $item->menu_item_parent;
+        }
+    }
+ 
+    // Add class.
+    foreach ( $items as $item ) {
+        if ( in_array( $item->ID, $parents ) ) {
+            $item->classes[] = 'menu-parent-item';
+        }
+    }
+    return $items;
+}
+add_filter( 'wp_nav_menu_objects', 'wpdocs_add_menu_parent_class' );
+
+[92]
+<!-- Simple shortcode for displaying a menu
+this will allow you to display a menu in where ever you add the shortcode, lots of room to expand the $args 
+but left it simple. -->
+
+function get_menu($args){
+    $menu = isset($atts['menu']) ? $atts['menu'] : '';
+    ob_start();
+    wp_nav_menu(array(
+        'menu' => $menu
+    ) );
+    return ob_get_clean();
+}
+add_shortcode('get_menu', 'get_menu');
+Usage Example:
+
+[get_menu menu="Main Menu"]
+
+[93]
+<!-- instead of large walkers you can simply filter menu item class names -->
+
+// adds useful menu-item class names
+function your_theme_menu_item_class( $classes, $item ) {
+ 
+  // Add slugs to menu-items
+  if ( 'category' == $item->object ) {
+    $category = get_category( $item->object_id );
+    $classes[] = 'category-' . $category->slug;
+  } elseif ( 'format' == $item->object ){
+    $format = get_term($item->object_id);
+    $classes[] = 'format-' . $format->slug;
+  }
+  return $classes;  
+}
+ 
+add_filter( 'nav_menu_css_class', 'your_theme_menu_item_class', 10, 2);
+
+[94]
+<!-- How to add .active class to active menu item
+Here is the code: -->
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+function special_nav_class($classes, $item){
+     if( in_array('current-menu-item', $classes) ){
+             $classes[] = 'active ';
+     }
+     return $classes;
+}
+
+[95]
+By default, menus are encased with a div container. The options on this page show this parameter as a string 
+to change the element used to contain the menu.
+
+<!-- However, it is not noted here that if you pass false as a value, the container is completely removed leaving
+ just the ul menu element. -->
+
+wp_nav_menu(array(
+    'container' => false // Removes the container, leaving just the ul element
+));
+
+[96]
+<!-- Removing the default div container
+In order to remove the default div container in which the menu is encased, just :
+Use the parameter ‘container’ in the array
+And leave it empty.
+Like in the following example : -->
+
+wp_nav_menu(array(
+    'container' => '', // Leaving it empty removes the <div> container.
+));
+
+[97]
+<!-- The only accepted values for the container argument, by default, are div and nav so any other value 
+will cause it to not display.
+It is not mentioned that container parameter by default accepts only ‘div’, ‘nav’ and falsy value (”, false, null). 
+If you want to extend accepted tag arguments and wrap menu parent ul tag in something else, you have to use
+ wp_nav_menu_container_allowedtags filter and add desired tag to the array. However, for the most 
+ uses, default two tags are most logical. -->
+
+[98]
+<!-- Adding a Word at the Beginning of the Menu 
+This example will allows you to add the word of your choice to the beginning of your menu as a list item.
+In this example, the word “Menu:” is added at the beginning. You may want to set an id on the list item
+(“item-id” in this example) so that you can use CSS to style it.
+-->
+
+wp_nav_menu( array(
+    'theme_location' => 'primary',
+    'items_wrap'     => '<ul><li id="item-id"><?php __( 'Menu:', 'textdomain' ); ?></li>%3$s</ul>'
+) );
+
+[99]
+<!-- Make a shortcode to show menu in editor 
+// Function that will return our Wordpress menu
+function show_wp_menu_function($atts, $content = null) {
+    --> 
+    extract(shortcode_atts(array(  
+        'menu'            => '', 
+        'container'       => 'div', 
+        'container_class' => '', 
+        'container_id'    => '', 
+        'menu_class'      => 'menu', 
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'depth'           => 0,
+        'walker'          => '',
+        'theme_location'  => ''), 
+        $atts));
+  
+  
+    return wp_nav_menu( array( 
+        'menu'            => $menu, 
+        'container'       => $container, 
+        'container_class' => $container_class, 
+        'container_id'    => $container_id, 
+        'menu_class'      => $menu_class, 
+        'menu_id'         => $menu_id,
+        'echo'            => false,
+        'fallback_cb'     => $fallback_cb,
+        'before'          => $before,
+        'after'           => $after,
+        'link_before'     => $link_before,
+        'link_after'      => $link_after,
+        'depth'           => $depth,
+        'walker'          => $walker,
+        'theme_location'  => $theme_location));
+}
+//Create the shortcode
+add_shortcode("show_wp_menu", "show_wp_menu_function");

@@ -1,0 +1,33 @@
+/*start single-posts*/
+.single-post{
+    height: 80px;
+    padding: 20px;
+    background-color: #FFF;
+    border: 1px solid #d8d8d8;
+    margin-bottom: 20px;
+}
+.single-post h3{
+    margin: 0 0 10px;
+    font-weight: bold;
+    color: #777;
+    letter-spacing: -1px;
+}
+.single-post .post-author,
+.single-post .post-date,
+.single-post .post-comments{
+    font-size: 12px;
+}
+.single-post img{
+    display: block;
+    margin: 10px 0 10px;
+    }
+.single-post .post-content{
+    /* min-height: 200px;  */
+    /* max-height: 200px;  */
+    line-height: 1.7;
+    color: #888;
+}
+.single-post i{
+    color: #999;
+}
+/*end single-posts*/

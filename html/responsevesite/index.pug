@@ -1,0 +1,42 @@
+include includes/myvar.pug
+include includes/mymixin.pug
+doctype
+html
+    head
+        meta(charset='utf-8')
+        title my responsive site
+        include includes/styles.pug
+    body
+        //- start Header
+        #clockrdy
+        div(class ='header txt-cntr')
+            .overlay 
+                .container 
+                    h1 choose your plan
+                    p(class ="plan fleft") $00/month  plan contains 5GB 
+                    p(class ="plan fleft") $10/month plan contains 15GB 
+                    p(class ="plan fleft") $20/month plan contains 40GB 
+                    p(class ="plan fleft") $40/month plan contains 100GB 
+                    .clearfix 
+                    //- ( MUST after float PUT clearfix)
+                    //- hr
+                    span(class = "order hidden-xs hidden-xxs") Order Now to get another plan for free
+            //- hr
+        //- Start Features
+        //- hr
+        .features 
+            .container 
+                h2(class= 'h1 txt-cntr') Our Features
+                //- h2.h1 Our Features
+                div(class ='feat fleft')
+                    h2 Fast
+                    p This is fast feature my name is rady ali hasan , iam civil engineer manger from sohag -egypt
+                div(class ='feat fleft') 
+                    h2 Secure 
+                    p This is Secure feature my name is rady ali hasan , iam civil engineer manger from sohag -egypt
+                div(class ='feat fleft')
+                    h2 Cheap 
+                    p This is Cheap feature my name is rady ali hasan , iam civil engineer manger from sohag -egypt
+        include includes/scripts.pug
+        //- engrdy@engrdy:/media/engrdy/zero/github2021/html/responsevesite$ pug index.pug -w -P
+        

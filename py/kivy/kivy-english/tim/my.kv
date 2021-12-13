@@ -1,0 +1,28 @@
+<MyGrid>
+    name: name
+    email: email
+    GridLayout:
+        cols:1
+        size: root.width - 200,root.height - 200
+        # orientation: 'vertical'
+        # spacing: 5
+        # padding: 5
+        pos: '100dp','100dp'
+        GridLayout:
+            cols:2
+            Label:
+                text: 'Name: '
+            TextInput:
+                id: name
+                multiline:False
+            Label:
+                text: 'Email: '
+            TextInput:
+                id: email
+                multiline:False
+        Button:
+            text: "submit"
+            # on_press: app.btn()
+            on_press: root.btn()
+            color: 1,1,0
+            

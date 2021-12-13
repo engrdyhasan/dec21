@@ -1,0 +1,31 @@
+@import "/media/engrdy/zero/github2021/html/sassrdy/_media";
+
+.clockrdy {
+		background-color: $baclr;
+}
+.abstain span{
+display: inline-block;
+background-color: $aclr;
+color: $baclr;
+font-size: 6*$sz;
+font-weight: bold;
+}
+.abstract::first-letter {
+	display: inline-block;
+	background-color: $aclr;
+	color: $baclr;
+	font-size: 6*$sz;
+	font-weight: bold;
+}
+.abase::first-line{
+	font-weight: bold;
+	color: $aclr;
+}
+::selection{
+	font-weight:lighter;
+	color: $aclr;
+}
+.abate::selection{
+	background-color: $aclr;
+	color: $baclr;
+}

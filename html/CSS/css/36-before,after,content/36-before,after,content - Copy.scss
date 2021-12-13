@@ -1,0 +1,37 @@
+@import "D:\\git\\CSS\\sass\\css\\_media.scss";
+.clockrdy {
+		background-color: $rclr;
+}
+.parent {
+margin-bottom: 2*$sz;
+overflow: hidden;
+}
+.one {
+background-color: $sclr;
+padding: 2*$sz;
+width: 6*$ful;
+float: left;
+position: relative;
+}
+.user{
+	background-color: $rclr;
+	padding: $sz;
+	width: 5*$sz;
+	float: left;
+	// height: 5.55 * $sz;
+	margin-right: 2*$sz;
+	font-size: 5*$sz;
+	text-align: center;
+}
+hr{
+	margin: 2*$sz 0;
+}
+// .one .pipline {
+span {
+	position: absolute;
+	width: .5*$sz;
+	height: $fwd;
+	right: -$sz;
+	top: 0;
+	background-color: $bdclr;
+}

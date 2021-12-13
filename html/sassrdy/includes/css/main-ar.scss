@@ -1,0 +1,17 @@
+@import "/media/engrdy/zero/github2021/html/sassrdy/_media";
+// sass --watch css 
+
+$drtion: rtl;
+.features {
+    // .h1 {
+    //     font-size: 5*$sz;
+    //     color: $gclr;
+    // }
+    
+    .feat {
+        padding: 0 0 2*$sz 0;
+    }
+}
+.fleft {
+    float: right !important;
+  }

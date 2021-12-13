@@ -1,0 +1,15 @@
+.navigation .submenu:before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 6px groove transparent;
+  border-right: 6px groove transparent;
+  border-bottom: 6px groove #FFF;
+}
+
+.navigation .menu:hover .submenu {
+  display: block;
+}

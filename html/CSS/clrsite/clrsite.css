@@ -1,0 +1,17 @@
+.theme {
+  background: DarkBlue;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 139, 0.25);
+          box-shadow: 0 0 1px rgba(0, 0, 139, 0.25);
+  color: #fff;
+}
+
+.banner {
+  background-color: #f2ece4;
+  color: #036;
+}
+
+body.dark .banner {
+  background-color: #6b717f;
+  color: #d2e1dd;
+}
+/*# sourceMappingURL=clrsite.css.map */

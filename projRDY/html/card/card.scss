@@ -1,0 +1,72 @@
+@import "/media/engrdy/zero/github2021/html/sassrdy/_media";
+// sass --watch css 
+
+// $drtion: ltr;
+
+.card {
+    width: 3* $ful;
+    height: 3.3* $ful;
+    margin: 5*$sz auto;
+    position:relative;
+    transform-style: preserve-3d;
+    @extend %transision
+}
+.card:hover {
+    transform: rotateY(180deg);
+}
+.card > div {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color:$gclr;
+    color:$baclr;
+    border-radius:$sz;
+    border:$brd;
+    font-family:$arfont, $enfont;
+    text-align: center;
+}
+.card.front {
+    z-index: 2;
+    backface-visibility: hidden;
+    // display: none;
+}
+.card .front header {
+    background-color:$bcclr;
+    width: 100%;
+    height:8*$sz;
+    margin-bottom: 5.5*$sz;
+    border-radius:$sz $sz 0 0;
+}
+.card .front img {
+    width: $ful;
+    height: $ful;
+    border-radius: 50%;
+    position: relative;
+    top: 2.5 * $sz;
+}
+.card .front h3 {
+    margin-bottom: 0.5*$sz;
+}
+.card .front p {
+    margin: 0 auto;
+    width: 90%;
+    line-height: 1.8;
+}
+.card .front span {
+    display: inline-block;
+    margin-top: $sz;
+    color: $bbclr;
+    font-weight: bold;
+}
+.card .back {
+    z-index: 1;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+.card .back ul {
+    padding: 0;
+    list-style: none;
+    line-height: 2;
+}

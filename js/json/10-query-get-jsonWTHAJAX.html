@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="show"></div>
+	<script src="jquery-3.4.1.min.js "></script>
+	<script>
+		
+$(function () {
+	// $.getJSON("users.json", function(data){
+	// 	console.log(data);
+	// 	var content = "";
+	// 	for (const x in data) {
+	// 		content +="<div>" + data[x].username +"</div>";
+	// 	}
+	// 	console.log(content);
+	// 	$("#show").html(content);
+	// });
+	$.ajax({
+		url: "users.json", 
+		dataType: 'json',
+		cache: false,
+		success : function(data, status){
+			$.each(data, function (index) {
+				$("#show").append("<div>"+data[index].username+"	:	"+data[index].Age+"</div>")
+			});
+			// *************************************
+			// console.log(data);
+			// document.writeln(data+"<br />");
+			// console.log(status);
+			// document.writeln(status+"<br />");
+			// ********************************
+		// 	var content = "";
+		// for (const x in data) {
+		// 	content +="<div>" + data[x].username +"</div>";
+		// }
+		// console.log(content);
+		// $("#show").html(content);
+		},
+		error: function (xhr, textStatus, err) {
+			console.log(xhr);
+			document.writeln(xhr+"<br />");
+			console.log(textStatus);
+			document.writeln(textStatus+"<br />");
+			console.log(err);
+			document.writeln(err+"<br />");
+		}
+	});
+
+
+
+
+});
+	</script>
+</body>
+</html>

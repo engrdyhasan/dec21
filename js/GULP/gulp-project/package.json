@@ -1,0 +1,18 @@
+{
+  "name": "rady",
+  "version": "1.0.0",
+  "description": "my Gulp project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rady hasan",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1"
+  },
+  "dependencies": {
+    "gulp-cli": "^2.3.0"
+  }
+}

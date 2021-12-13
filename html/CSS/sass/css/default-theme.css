@@ -1,0 +1,118 @@
+.navbar-header span {
+  color: #009AFF;
+}
+/********Start overriding bootstrap ***********/
+/* Start section Tool box */
+.option-box .color-option{border: 5px solid #009AFF;}
+.option-box .color-option ul li{background: #009AFF;}
+.option-box .gear-check {background:#009AFF ;}
+/* Start section Tool box */
+/* /////engradyhassan///10082020/////// */
+/*main navbar*/
+/*Active Link*/
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #009AFF;
+}
+
+/*Brand name*/
+.navbar-inverse .navbar-brand {color: #888;}
+/*.navbar-inverse .navbar-brand span{
+*/
+/*Drop down menu*/
+.dropdown-menu {
+  border-top: 3px solid #009AFF;
+  background-color: #333;
+ }
+.dropdown-menu > li > a {color: #fff;}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: #009AFF;
+  color: #000;
+}
+.dropdown-menu .divider {background-color: #009AFF;}
+/*navbar toggle*/
+.carousel-indicators .active {background-color: #009AFF;}
+/********END overriding bootstrap ***********/
+/* start section about */
+.about .lead {color: #AAA;}
+.about h1 span {color: #009AFF;}
+/* end section about */
+/* start section Features */
+.features {background: #FFF;}
+/* end section Features */
+/* start Testimonials corousel  */
+.testimonials span {color: #009AFF;}
+.testimonials .carousel-indicators li {border: 2px solid #fff;}
+.testimonials .carousel-indicators li.active {border: 2px solid #009AFF;}
+/* end Testimonials corousel  */
+/* start Section price Table  */
+.price-table {background: #AAA;}
+.price-table .price-box {
+  background: #FFF;
+  border: 1px solid #AAA;
+}
+.price-table .price-box h2 {margin: 5px 0 15px;}
+.price-table .price-box:hover p {border: 2px solid #FFF;}
+.price-table .price-box p {
+  color: #333;
+  background: #FFF;
+  border: 2px solid #AAA;
+}
+/* end Section price Table  */
+/* start Section our team  */
+.our-team .team {color: #FFF;}
+/* end Section our team  */
+/* start Section subscribe  */
+.subscribe {background: #FFF;}
+.subscribe h1 {color: #AAA;}
+/* end Section subscribe  */
+/* ---------------------------------------- */
+/*start Section statistics */
+.statistics .data {
+  background-color: rgba(3, 3, 3, 0.3);
+  color: #AAA;
+}
+.statistics .stats:hover {color: #fff;}
+/*end Section statistics */
+/*start Section our skills */
+
+/*end Section our skills */
+.contact-us .fields {
+  background: rgba(3, 3, 3, 0.3);
+  color: #FFF;
+}
+/* for dark version */
+.contact-us input[type="text"],
+.contact-us textarea {
+  background: rgba(3, 3, 3, 0.3);
+  color: #FFF;
+}
+/*end Section contact us*/
+/*start Section our clients*/
+.our-clients {background: #FFF;}
+.our-clients img:hover {opacity: 0.4;}
+/*end Section our clients*/
+/*start Ultimate footer Section*/
+.footer {
+    background: #333;
+    color: #AAA;
+}
+.footer a{color: #AAA;}
+.footer a:hover{color: #FFF;}
+.footer h3 {color: #009AFF;}
+.footer .three-columns {overflow: hidden;}
+.footer .three-columns li{width: 33.333333%;}
+
+.footer .img-thumbnail {
+  background: rgba(3, 3, 3, 0.3);
+  border: 1px solid #333;
+}
+.footer .copyright {
+  background: #333;
+  color: #AAA;
+}
+.footer .copyright span{color: #009AFF;}
+/*end Ultimate footer Section*/

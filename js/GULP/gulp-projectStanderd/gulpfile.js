@@ -1,0 +1,1 @@
+﻿lsb_release -a 

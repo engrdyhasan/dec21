@@ -1,0 +1,128 @@
+.theme {
+  background: Green;
+  box-shadow: 0 0 1px rgba(0, 128, 0, 0.25);
+  color: #fff;
+}
+
+.class1 {
+  font-size: 11px;
+  background: #2980b8;
+  theme-color: scale(#2980b9, 0.125);
+  background-color: #2980b9;
+  color: #2980b9;
+  border-top-left-radius: #b929b0;
+  border-top-right-radius: #3a80ae;
+  border-right: #409ad5;
+  border-top: #2980b9;
+  border-bottom-left-radius: #b96229;
+  border-bottom-right-radius: #717171;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove rgba(41, 128, 185, 0.2);
+}
+
+.class2 {
+  font-size: 12px;
+  background: #297fb8;
+  theme-color: scale(#2980b9, 0.25);
+  background-color: #2980b9;
+  color: #2980b9;
+  border-top-left-radius: #b99229;
+  border-top-right-radius: #4c80a2;
+  border-right: #6ab0de;
+  border-top: #3ec0ff;
+  border-bottom-left-radius: #5d3115;
+  border-bottom-right-radius: #393939;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove rgba(41, 128, 185, 0.4);
+}
+
+.class3 {
+  font-size: 13px;
+  background: #297fb7;
+  theme-color: scale(#2980b9, 0.375);
+  background-color: #2980b9;
+  color: #2980b9;
+  border-top-left-radius: #29b962;
+  border-top-right-radius: #5d8097;
+  border-right: #94c6e7;
+  border-top: #52ffff;
+  border-bottom-left-radius: #3e210e;
+  border-bottom-right-radius: #262626;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove rgba(41, 128, 185, 0.6);
+}
+
+.class4 {
+  font-size: 14px;
+  background: #297fb7;
+  theme-color: scale(#2980b9, 0.5);
+  background-color: #2880ba;
+  color: #2a80b8;
+  border-top-left-radius: #3229b9;
+  border-top-right-radius: #6e808b;
+  border-right: #bedcf0;
+  border-top: #67ffff;
+  border-bottom-left-radius: #2e190a;
+  border-bottom-right-radius: #1c1c1c;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove rgba(41, 128, 185, 0.8);
+}
+
+.class5 {
+  font-size: 15px;
+  background: #287eb6;
+  theme-color: scale(#2980b9, 0.625);
+  background-color: #2880ba;
+  color: #2a80b8;
+  border-top-left-radius: #b92950;
+  border-top-right-radius: gray;
+  border-right: #e7f2fa;
+  border-top: #7bffff;
+  border-bottom-left-radius: #251408;
+  border-bottom-right-radius: #171717;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove #2980b9;
+}
+
+.class6 {
+  font-size: 16px;
+  background: #287eb6;
+  theme-color: scale(#2980b9, 0.75);
+  background-color: #2880ba;
+  color: #2a80b8;
+  border-top-left-radius: #80b929;
+  border-top-right-radius: #917f74;
+  border-right: white;
+  border-top: #90ffff;
+  border-bottom-left-radius: #1f1007;
+  border-bottom-right-radius: #131313;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove #2980b9;
+}
+
+.class7 {
+  font-size: 17px;
+  background: #287db5;
+  theme-color: scale(#2980b9, 0.875);
+  background-color: #2880ba;
+  color: #2a80b8;
+  border-top-left-radius: #29b0b9;
+  border-top-right-radius: #a27f69;
+  border-right: white;
+  border-top: #a4ffff;
+  border-bottom-left-radius: #1a0e06;
+  border-bottom-right-radius: #101010;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove #2980b9;
+}
+
+/*/////////function /////////*/
+
+/*# sourceMappingURL=_var.css.map */

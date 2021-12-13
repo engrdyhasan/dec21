@@ -1,0 +1,8 @@
+<MyLayout> # no need to import stuff in kv!
+    orientation:"vertical"
+    Label:
+        id:mylabel
+        text:"My App"
+    Button:
+        text: "Click me!"
+        on_press: print(mylabel.text)

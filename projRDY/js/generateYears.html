@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>generateYears</title>
+</head>
+<body>
+	<script>
+
+        function generateYears(start, end, exclude) {
+           for (let i = start; i <= end; i++) {
+               if (i === exclude) {
+                   continue;
+               }
+               document.writeln(i+" - ");  
+           } 
+        }
+        generateYears(1968, 2021, 1994);
+    </script>
+</body>
+</html>

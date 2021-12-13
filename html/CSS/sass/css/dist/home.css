@@ -1,0 +1,111 @@
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \37 ;
+  }
+}
+.class1 {
+  color: blue;
+  font-size: 20;
+  font-weight: bold;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \31 2;
+  }
+}
+.class2 {
+  background-color: green;
+  font-size: 20;
+  font-weight: bold;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \31 7;
+  }
+}
+.class3 {
+  background-color: cyan;
+  font-size: 20;
+  font-weight: bold;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \32 2;
+  }
+}
+.parent {
+  background-color: green;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \32 4;
+  }
+}
+.parent .class1 {
+  color: magenta;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \32 7;
+  }
+}
+.parent .class2 {
+  color: yellow;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \33 0;
+  }
+}
+.parent:hover {
+  background: blue;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home6\.scss;
+  }
+
+  line {
+    font-family: \31 ;
+  }
+}
+body {
+  background: #0f0;
+}
+
+/*# sourceMappingURL=home.css.map */

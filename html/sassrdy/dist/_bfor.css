@@ -1,0 +1,52 @@
+.theme {
+  background: Green;
+  box-shadow: 0 0 1px rgba(0, 128, 0, 0.25);
+  color: #fff;
+}
+
+.class1 {
+  font-size: 11px;
+  background: #2980b8;
+  border-top: scale(#2980b9, 0.125);
+  background-color: #2980b9;
+  color: #2980b9;
+  border-top-left-radius: #b929b0;
+  border-top-right-radius: #3a80ae;
+  border-right: #409ad5;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove rgba(41, 128, 185, 0.2);
+}
+
+.class2 {
+  font-size: 12px;
+  background: #297fb8;
+  border-top: scale(#2980b9, 0.25);
+  background-color: #2980b9;
+  color: #2980b9;
+  border-top-left-radius: #b99229;
+  border-top-right-radius: #4c80a2;
+  border-right: #6ab0de;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove rgba(41, 128, 185, 0.4);
+}
+
+/*/////////function /////////*/
+.navigation .submenu:before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 6px groove transparent;
+  border-right: 6px groove transparent;
+  border-bottom: 6px groove #FFF;
+}
+
+.navigation .menu:hover .submenu {
+  display: block;
+}
+
+/*# sourceMappingURL=_bfor.css.map */

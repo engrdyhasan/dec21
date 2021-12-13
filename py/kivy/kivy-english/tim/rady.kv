@@ -1,0 +1,56 @@
+<Button>:
+    font_size: 40
+    color: 0.3,0.6,0.7,1
+    size_hint: .125, .175
+
+<FloatLayout>:
+    Button:
+        id: btn
+        text: "engrdy" if btn.state == "normal" else "Nouran"
+        # size_hint: .2, .4
+        # pos: 200, 200
+        pos_hint: {'x': .6}
+        background_color: 0.9, 0.4, 0.5, 1
+    Button:
+        text: "{'x': .1, 'top': .8}"
+        # size_hint: .2, .4
+        # pos: 200, 200
+        pos_hint: {'x': .1, 'top': .8}
+    Button:
+        text: "{'x': .1, 'bottom': .8}"
+        # size_hint: .2, .4
+        # pos: 200, 200
+        pos_hint: {'x': .1, 'bottom': .8}
+    Button:
+        text: "{'left': .3, 'y': .6}"
+        # pos: 200, 200
+        pos_hint: {'lift': .3, 'y': .6}
+        # size_hint: .4, .2
+    Button:
+        text: "'right': .7, 'y': .6"
+        pos_hint: {'right': .7, 'y': .6}
+        # size_hint: .5, .2
+# <MyGrid>
+#     name: name
+#     email: email
+#     GridLayout:
+#         cols:1
+#         size: root.width - 200,root.height - 200
+#         # orientation: 'vertical'
+#         # spacing: 5
+#         # padding: 5
+#         pos: '100dp','100dp'
+#         GridLayout:
+#             cols:2
+#             Label:
+#                 text: 'Name: '
+#             TextInput:
+#                 id: name
+#                 multiline:False
+#             Label:
+#                 text: 'Email: '
+#             TextInput:
+#                 id: email
+#                 multiline:False
+        
+            

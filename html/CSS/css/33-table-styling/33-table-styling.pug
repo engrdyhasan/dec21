@@ -1,0 +1,45 @@
+include ../includes/myvar.pug
+include ../includes/mymixin.pug
+doctype 
+html(lag='en') 
+	head 
+		meta(charset='utf-8')
+		meta(name='description' content='Learn pugjs')
+		block pageTitle
+			title abet (v)
+		include  ../includes/styles.pug
+		link(rel="stylesheet", href="33-table-styling.css")
+	body
+		block pageContent 
+			.clock
+					img(class="img-circle" src="images/rose/r.jpg" height="30px" width="30px" )
+					span(id="clock" style="color: red; top:70px")	
+			table 
+				thead 
+					tr 
+						td Name
+						td Age
+						td email
+				tbody  
+					tr 
+						td engRdy
+						td 53
+						td rdy@eng.com
+					tr 
+						td engMhmd
+						td 15
+						td mhmd@eng.com
+					tr 
+						td pyMalak
+						td 13
+						td malak@eng.com
+					tr 
+						td drnoordy
+						td 11
+						td nour@eng.com
+				//- - var z=0
+				//- ul 
+				//- 	while z < 5
+				//- 		li= z++
+
+				include ../includes/scripts.pug

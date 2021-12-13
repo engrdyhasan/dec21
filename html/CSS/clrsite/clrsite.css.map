@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAMA,AAAA,MAAM,CAAC;EAJH,UAAU,EAQe,QAAQ;EAPjC,UAAU,EAAE,CAAC,CAAC,CAAC,CAAC,GAAG,CAOM,qBAAQ;EANjC,KAAK,EAAE,IAAI;CAYd;;AAiBD,AAAA,OAAO,CAAC;EARJ,gBAAgB,EAPD,OAAO;EAQtB,KAAK,EAPI,IAAI;CAmBhB;;AAHC,AAAA,IAAI,AAAA,KAAK,CAFX,OAAO,CAEO;EAPV,gBAAgB,EARF,OAAO;EASrB,KAAK,EARG,OAAO;CAgBhB",
+    "sources": [
+        "clrsite.scss"
+    ],
+    "names": [],
+    "file": "clrsite.css"
+}

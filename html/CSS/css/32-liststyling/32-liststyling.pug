@@ -1,0 +1,29 @@
+include ../includes/myvar.pug
+include ../includes/mymixin.pug
+doctype 
+html(lag='en') 
+	head 
+		meta(charset='utf-8')
+		meta(name='description' content='Learn pugjs')
+		block pageTitle
+			title abet (v)
+		include  ../includes/styles.pug
+	body
+		block pageContent 
+			h3 language
+			ul(class= 'abdicate') 
+				li(class='abort	') PHP 
+				li PUGJS \#{nouraan}
+				li MYSQL  
+				li JS 
+					ul 
+						li React	
+						li Vuejs
+						li Angular	
+				img(class="img-circle" src="images/rose/r.jpg" height="30px" width="30px" )	
+				//- - var z=0
+				//- ul 
+				//- 	while z < 5
+				//- 		li= z++
+
+				include ../includes/scripts.pug

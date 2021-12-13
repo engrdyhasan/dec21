@@ -1,0 +1,19 @@
+INSERT INTO `city` (`id`, `name`, `country`, `district`, `population`) VALUES (NULL, 'e', 'usa', 'ec', '1000000'),
+(NULL, 'd', 'acb', 'd', '12365456'),
+(NULL, 'ca', 'bca', 'ca', '9874563'),
+(NULL, 'f', 'usa', 'fa', '1000000'),
+(NULL, 'bg', 'efg', 'gb', '12365456'),
+(NULL, 'ch', 'egf', 'ch', '9874563') ,
+(NULL, 'ai', 'usa', 'ai', '1000000'), 
+(NULL, 'bj', 'xzy', 'bj', '12365456'), 
+(NULL, 'ck', 'usa', 'ck', '9874563'), 
+(NULL, 'la', 'zyx', 'la', '1000000'), 
+(NULL, 'mb', 'yzx', 'bm', '12365456'),
+ (NULL, 'cm', 'yxz', 'mc', '9874563'), 
+ (NULL, 'na', 'rdy', 'na', '1000000'), 
+ (NULL, 'ob', 'nor', 'ob', '12365456'), (NULL, 'pc', 'mlk', 'pc', '9874563') ,(NULL, 'qa', 'usa', 'qa', '1000000'), (NULL, 'rb', 'mrw', 'rb', '12365456'), (NULL, 'cs', 'usa', 'cs', '9874563') ,(NULL, 'ta', 'moh', 'ta', '1000000'), (NULL, 'bu', 'usa', 'ub', '12365456'), (NULL, 'vc', 'ftm', 'vc', '9874563'), (NULL, 'wa', 'yos', 'wa', '1000000'), (NULL, 'xb', 'suz', 'xb', '12365456'), (NULL, 'yc', 'usa', 'yc', '9874563');
+-- *************
+SELECT * FROM `city` 
+SELECT * FROM `city` WHERE `country`='usa' AND `population` > 100000
+SELECT name FROM `city` WHERE `country`='usa' AND `population` > 120000
+-- *************

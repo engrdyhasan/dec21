@@ -1,0 +1,106 @@
+include includes/myvar.pug
+include includes/mymixin.pug
+//- mixin skillist 
+//- 	ul.list-unstyled 
+//- 		li py 
+//- 		li kivy 
+//- 		li tkinter
+doctype 
+html(lag='en') 
+	head 
+		meta(charset='utf-8')
+		meta(name='description' content='Learn pugjs')
+		block pageTitle
+			title abet (v)
+		include includes/styles.pug
+		link(rel="stylesheet", href="style.css")
+	body
+		block pageInfo 
+			main Main page Content
+		block pageContent 
+			div(class='main-container', id='main') 
+				h2(main-title) from main page
+				+feature('Cheap price')
+				+feature('Fast support')
+				+feature('Clean code')
+			+skillist
+			
+			//- each index, val in [0,2,3,'rady',5**2,6,7*2,8/2,9+2] 
+			- for (var x=0; x<= 5;x++)
+				li item #{x}
+			div!= 'Wild animals <b>ABOUND</b> here/in this park'
+			div= 'Wild animals <b>ABOUND</b> here/in this park'
+			#abolish Slavery was abolished in the 19th century
+			.abduct to take away (a person) by force <b>PUGJS </b>
+			div(class='abase', id='abate')
+				h2(class= 'abbreviate') my skills
+				//- Start my skills 
+					// Start my skills 
+				+skillist
+				ul(class= 'abdicate') 
+					li(class='abort	'+className ) PHP 
+					li MYSQL #{themeName.toUpperCase()} 
+					li SASS	#{themeTag}
+					li SASS	!{themeTag}
+					li PUGJS \#{nouraan}
+					li gulpjs #{'#{nouraan}'}
+						span malak
+				// End my skills 
+				div: a: img
+				div(class=className) Parent Div
+					div(class='child	'+ className) child Div
+				P.abhor lorem <strong> rady</strong>
+				.rdy this is interpolation #[b test] after element
+				.rdy this is interpolation #[b(class='a',id='c') test] after element
+				p#abide 
+					| My name is rady 
+					b pugjs 
+					| and 
+					span sass
+				|
+				|
+				.
+					engrdy the best engineer
+				form(action="rdy")
+					h2.contact-title contact me 
+					input(class='f-c', type='text', name='user')
+					input(
+						class='f-c', type='email', name='email')
+					input(class='f-c',
+						type='text',
+						name='subject',
+						style={ 'background': 'green'}
+						)
+				button(style= 'background: red; color: white') Send
+				button(style={ 'background': 'green', 'color': 'white'}) Reset
+				- var z=0
+				ul 
+					while z < 5
+						li= z++
+						//- this is each loop
+			each val in []
+				div=val
+			else 
+				p there is no value
+			each val, index in ["Fri","Sat","Sun","Mon","Tus","Wed","The"]
+				div=index+ ':' +val
+			each val, index in [0,2,3,'rady',5**2,6,7*2,8/2,9%2] 
+				div= val
+					p= index +' : '+val
+			- var friends = 2
+			case friends	
+				when 0
+					- break 
+					//- p you have no friends 
+				when 1
+				when 2
+					p you have a few friends
+				default 
+					p you have #{friends} friends 
+					//- *************************
+			- var lessons = 5		
+			case lessons	
+				when 0: p you have no lessons 
+				when 1: p you have a lesson
+				default: p you have #{lessons} lessons 
+			include includes/scripts.pug

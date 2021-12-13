@@ -1,0 +1,52 @@
+BoxLayout:
+    orientation:'vertical'
+    BoxLayout:
+        orientation:'vertical'
+        Label:
+            text: "LOGIN-PROGRAM"
+            font_size: 28
+            color:1,0,1,1
+            background_color:0,0,.3,1
+        Label:
+            text: "USERNAME: "
+            color:0,0,1,1
+            background_color:(0,0,.3,1)
+        TextInput:
+            id: 'mail'
+            text:'ENTER YOUR USERNAME: '
+            multiline: False
+            size_hint: 1, .9
+        Label:
+            text: "EMAIL: "
+            color:0,0,1,1
+            background_color:(0,0,.3,1)
+        TextInput:
+            id: 'pass'
+            text:'ENTER YOUR EMAIL: '
+            multiline: False
+            size_hint: 1, .9
+        BoxLayout:
+            orientation:'vertical'
+            Label:
+                text: "PASSWORD: "
+                color:0,0,1,1
+                background_color:(0,0,.3,1)
+                multiline: False
+            TextInput:
+                id: 'mail'
+                text:'ENTER YOUR PASSWORD : '
+                multiline: False
+                size_hint: 1, .9
+            BoxLayout:
+                orientation:'horizontal'
+                Button:
+                    text: "LOGIN"
+                    color:1,.25,.35,1
+                Button:
+                    text: "SINUP"
+                    color:1,.5,.3,1
+        BoxLayout:
+            orientation:'vertical'
+            Label:
+                text: "Devloper engrdy 2021 "
+        

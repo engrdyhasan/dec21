@@ -1,0 +1,16 @@
+@import "/media/engrdy/zero/github2021/html/sassrdy/_media";
+.clock {
+		background-color: $cclr;
+}
+// ul{
+// 	list-style: cross-fade(5);
+// }
+ul {
+    display: block;
+    list-style-type:lower-alpha;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}

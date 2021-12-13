@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrollTop,Left27</title>
+  <style>
+    body {
+      height: 4000px;
+      width:  4000px;
+    }
+  .rdy{
+    width: 100px;
+    height: 100px;
+	position:fixed;
+	top:20px;
+	left:20px;
+	padding: 10px; 
+    border: 10px solid #080;
+    margin: 10px;
+    background: aqua;
+	color:#F00;
+  };
+  .active {
+  background:#00F
+  }
+  <!-- .hidden {visibility: hidden;}  -->
+  </style>
+  <script>
+	document.getElementById('main').onclick = function () {
+  'use strict';
+  document.body.scrollTop +=  100;
+    console.log(document.body.scrollTop);
+  if (document.body.scrollTop >= 1000) {
+    this.classList.add('active');
+  }
+};
+  </script>
+  </head>
+  <body>
+  
+    <div id="main" class="rdy">i am learning js</div>
+    <!-- <div id="clockrdy">time: </div> -->
+	
+    <!-- <button id="scroll">open link</button> -->
+	
+    <!-- <script src="js/scrollTop,Left27.js"></script> -->
+    <!-- <script src="js/clockrdy.js"></script> -->
+	
+  </body>
+</html>

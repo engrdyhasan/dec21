@@ -1,0 +1,49 @@
+/*
+Error: Invalid CSS after "...ope}-size: 15px": expected ";", was "#($prope)-size:..."
+        on line 61 of D:\developement\zero\CSS\SassZero\projSass\scss\nestedZero.scss
+
+56: body {
+57:     direction: $drtion;
+58: }
+59: .main {
+60:     #{$prope}-size: 15px
+61:     #($prope)-size: 15px
+62:     @include brdrdus(2px);
+63:     padding: 10px;
+64:     margin: 10px;
+65:     background: 1px solid $biColor;
+66: }
+
+Backtrace:
+D:\developement\zero\CSS\SassZero\projSass\scss\nestedZero.scss:61
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1203:in `tok!'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:804:in `block in try_declaration'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1254:in `call'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1254:in `rethrow'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:809:in `try_declaration'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:732:in `declaration_or_ruleset'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:686:in `block_contents'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:670:in `ruleset'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:696:in `block_child'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:137:in `stylesheet'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:41:in `parse'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:414:in `_to_tree'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+D:/developement/zero/CSS/SassZero/koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
+D:/developement/zero/CSS/SassZero/koala/bin/sass:22:in `load'
+D:/developement/zero/CSS/SassZero/koala/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ope}-size: 15px\": expected \";\", was \"#($prope)-size:...\"\A         on line 61 of D:\developement\zero\CSS\SassZero\projSass\scss\nestedZero.scss\A \A 56: body {\A 57:     direction: $drtion;\A 58: }\A 59: .main {\A 60:     #{$prope}-size: 15px\A 61:     #($prope)-size: 15px\A 62:     @include brdrdus(2px);\A 63:     padding: 10px;\A 64:     margin: 10px;\A 65:     background: 1px solid $biColor;\A 66: }"; }

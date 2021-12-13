@@ -1,0 +1,625 @@
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \37 ;
+  }
+}
+.class1 {
+  color: blue;
+  font-size: 20;
+  font-weight: bold;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \31 2;
+  }
+}
+.class2 {
+  background-color: green;
+  font-size: 20;
+  font-weight: bold;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \31 7;
+  }
+}
+.class3 {
+  background-color: cyan;
+  font-size: 20;
+  font-weight: bold;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \32 2;
+  }
+}
+.parent {
+  background-color: green;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \32 4;
+  }
+}
+.parent .class1 {
+  color: magenta;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \32 7;
+  }
+}
+.parent .class2 {
+  color: yellow;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss;
+  }
+
+  line {
+    font-family: \33 0;
+  }
+}
+.parent:hover {
+  background: blue;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home6\.scss;
+  }
+
+  line {
+    font-family: \31 ;
+  }
+}
+body {
+  background: #0f0;
+}
+
+/*# sourceMappingURL=home.css.map */
+/*------------------------------*/
+/*------------------------------*/
+/*#000080*/
+/*#00FFFF*/
+/*#87CEEB*/
+/*#008080*/
+/*#9ACD32*/
+/*B0E0E6*/
+/*E0FFFF*/
+/*F0FFFF*/
+/*--------------------------*/
+/*#A52A2A*/
+/*F5DEB3*/
+/*#D2691E*/
+/*#*/
+/*FF7F50*/
+/**/
+/*#*/
+/*F5DEB3*/
+/*#F5F5DC*/
+/*--------------------------*/
+/*---------------------------*/
+/*---------------------*/
+.header .navbar {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.header .navbar {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.col-12 {
+  width: 100;
+}
+
+.col-11 {
+  width: 91.6666666667;
+}
+
+.col-10 {
+  width: 83.3333333333;
+}
+
+.col-9 {
+  width: 75;
+}
+
+.col-8 {
+  width: 66.6666666667;
+}
+
+.col-7 {
+  width: 58.3333333333;
+}
+
+.col-6 {
+  width: 50;
+}
+
+.col-5 {
+  width: 41.6666666667;
+}
+
+.col-4 {
+  width: 33.3333333333;
+}
+
+.col-3 {
+  width: 25;
+}
+
+.col-2 {
+  width: 16.6666666667;
+}
+
+.col-1 {
+  width: 8.3333333333;
+}
+
+.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
+  float: left;
+  padding: 9px;
+  background-color: Teal;
+  border: 1px solid navy;
+  text-align: center;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+  font-size: 11px;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+  font-size: 12px;
+}
+
+.col-3 {
+  width: 25%;
+  font-size: 13px;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+  font-size: 14px;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+  font-size: 15px;
+}
+
+.col-6 {
+  width: 50%;
+  font-size: 16px;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+  font-size: 17px;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+  font-size: 18px;
+}
+
+.col-9 {
+  width: 75%;
+  font-size: 19px;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+  font-size: 20px;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+  font-size: 21px;
+}
+
+.col-12 {
+  width: 100%;
+  font-size: 22px;
+}
+
+.class1 {
+  font-size: 11px;
+}
+
+.class2 {
+  font-size: 12px;
+}
+
+.class3 {
+  font-size: 13px;
+}
+
+.class4 {
+  font-size: 14px;
+}
+
+.class5 {
+  font-size: 15px;
+}
+
+.class6 {
+  font-size: 16px;
+}
+
+.class7 {
+  font-size: 17px;
+}
+
+.class8 {
+  font-size: 18px;
+}
+
+.class9 {
+  font-size: 19px;
+}
+
+.class10 {
+  font-size: 20px;
+}
+
+.class1 {
+  font-size: 12px;
+}
+
+.class2 {
+  font-size: 14px;
+}
+
+.class3 {
+  font-size: 16px;
+}
+
+.class4 {
+  font-size: 18px;
+}
+
+.class5 {
+  font-size: 20px;
+}
+
+.class6 {
+  font-size: 22px;
+}
+
+.class7 {
+  font-size: 24px;
+}
+
+.class8 {
+  font-size: 26px;
+}
+
+.class9 {
+  font-size: 28px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 20px;
+}
+
+.defp {
+  font-size: 18px;
+}
+
+.enp {
+  font-size: 18px;
+}
+
+.arp {
+  font-size: 18px;
+}
+
+.cutp {
+  font-size: 18px;
+}
+
+.class1 {
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -o-border-radius: 25px;
+  -ms-border-radius: 25px;
+  border-radius: 25px;
+  font-size: 15px;
+  background-color: blue;
+  width: 25%;
+  float: left;
+}
+
+/*-------------------------
+.class2 {
+    @include brdrdus(10px);
+    @extend %transision;
+    font-size: $sz - 3;
+    background-color: $bbColor;
+    width: $wdth/$nofElement;
+    float: $flotlft;
+}
+.class3 {
+    @include brdrdus(15px);
+    font-size: $sz + 6;
+    background-color: $bcColor;
+    width: $wdth/$nofElement;
+    float: $flotlft;
+}
+
+
+/*-------------------------*/
+/*
+.hassan {
+    @extend .main;
+    @extend .class1;
+    @extend .parent;
+    @extend .parent;
+    @extend .parent;
+    @extend .class4;
+    font-size: large;
+
+    // @import "_os.scss";
+}
+*/
+/*/////////function /////////*/
+/*
+@function incFont($ele) {
+  @return $ele + 10;
+}
+.rady {
+  font-size: incFont(10px);
+}
+.parent {
+    font-size: 15px;
+    background: url('../../../../tools/images/r.jpg');
+    @include brdrdus(30px);
+}
+.rady {
+    font-size: incFont(10px);
+} 
+*/
+/*ul li
+{
+	display: inline;
+}*/
+/*End Main Rules*/
+/*Start Header*/
+/*End Header*/
+* {
+  -webkit-box-sizing: border-box;
+  --mozbox-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Tahoma Arial";
+  background: #F7600e;
+  direction: ltr;
+  color: blue;
+  width: 1000px;
+}
+
+.container {
+  width: 1200px;
+  margin: 20px auto;
+  background: #F7600e;
+  position: relative;
+}
+
+.header {
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  -ms-border-radius: 7px;
+  border-radius: 7px;
+  background: Powderblue;
+  color: wheat;
+  min-height: 100px;
+  background-size: cover;
+  overflow: hidden;
+}
+.header .navbar {
+  overflow: hidden;
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header .navbar .navbar {
+  color: yellow;
+  width: 80%;
+  float: left;
+}
+.header .navbar .navbar ul {
+  margin: 50px 50px 0 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+.header .navbar .navbar ul li {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+}
+.header .navbar .navbar .logo {
+  font-size: 24px;
+  width: 20%;
+  float: right;
+}
+.header .navbar .navbar .logo img {
+  height: 100px;
+  margin: 20px;
+}
+.header .navbar .navbar .links {
+  float: right;
+}
+.header .navbar .navbar .links i {
+  margin-left: 5px;
+}
+
+.main, .class1 {
+  font-size: 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  padding: 10px;
+  margin: 10px;
+  background: 1px solid lightcyan;
+}
+
+.table {
+  height: 100%;
+  display: table;
+}
+
+/*Start Content*/
+.content {
+  min-height: 500px;
+  background: cyan;
+  overflow: hidden;
+}
+.content .sidebar {
+  float: right;
+  width: 25%;
+  margin-left: 1%;
+  height: 500px;
+}
+.content .sidebar .widget {
+  width: 90%;
+  background: #fff;
+  border: 1px solid cyan;
+  margin: 10px auto;
+}
+.content .sidebar .widget .title {
+  background: cyan;
+  color: #FFF;
+  padding: 5px 0;
+  text-align: center;
+}
+.content .sidebar .widget .data {
+  text-align: center;
+  padding: 5px 0;
+}
+.content .sidebar .widget .data img {
+  /*padding-right: :10PX 0;*/
+  max-width: 80%;
+  margin: 5px auto;
+}
+.content .sidebar .widget .data ul {
+  text-align: right;
+}
+.content .sidebar .widget .data ul li {
+  padding-right: 5px 0;
+}
+.content .products {
+  float: left;
+  width: 74%;
+  padding: 0 0 10px 0;
+}
+.content .products .product {
+  width: 22%;
+  height: 150px;
+  margin-left: 3%;
+  margin-top: 20px;
+  float: right;
+  text-align: center;
+  background-color: skyblue;
+}
+.content .products .product img {
+  max-width: 100%;
+}
+
+/*End Content*/
+/*Start Footer*/
+footer {
+  min-height: 100px;
+  background: cyan;
+}
+footer .info {
+  background: cyan;
+  /*overflow: hidden; */
+}
+footer .info .box {
+  width: 32%;
+  float: right;
+  margin-left: 1%;
+}
+footer .info ul {
+  margin: 10px 10px 0 0;
+}
+footer .info h3 {
+  border-bottom: 2px solid cyan;
+}
+
+.copyright {
+  background: cyan;
+  padding: 10px 0;
+  color: lightcyan;
+  text-align: center;
+}

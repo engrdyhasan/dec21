@@ -1,0 +1,40 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss}line{font-family:\000037}}
+.class1 {
+  color: blue;
+  font-size: 20;
+  font-weight: bold; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss}line{font-family:\0000312}}
+.class2 {
+  background-color: green;
+  font-size: 20;
+  font-weight: bold; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss}line{font-family:\0000317}}
+.class3 {
+  background-color: cyan;
+  font-size: 20;
+  font-weight: bold; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss}line{font-family:\0000322}}
+.parent {
+  background-color: green; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss}line{font-family:\0000324}}
+  .parent .class1 {
+    color: magenta; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss}line{font-family:\0000327}}
+  .parent .class2 {
+    color: yellow; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home\.scss}line{font-family:\0000330}}
+  .parent:hover {
+    background: blue; }
+
+    @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/developement\/zero\/CSS\/SassZero\/projSass\/scss\/home6\.scss}line{font-family:\000031}}
+
+    $x: 12;
+    @while $x > 0 {
+      .col-#{$x} {
+        width: (100/(12/$x));
+      }
+      $x: $x - 1;
+    }

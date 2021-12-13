@@ -1,0 +1,191 @@
+// // $drtion: ltr;
+ @import "D:\\git\\CSS\\sass\\css\\_media.scss";
+.clock {
+		background-color: $rcolor;
+}
+ul{
+	list-style: cross-fade(5);
+}
+body{height:  50 * $full}
+div{
+	color: $jcolor;
+	width: $full;
+	height: 3*$sz;
+	// padding: $sz;
+	// margin: $sz;
+	border: $sz;
+	top: $sz;
+}
+.mhmd {
+	background-color: $ccolor;
+	position: sticky;
+	bottom: 0;
+	right: 0;
+}
+.ali {
+	background-color: $ccolor;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.nour {
+	background-color: $scolor;
+	position: fixed;
+	bottom: $full;
+	right: $full;
+}
+.rady {
+	background-color: $rcolor;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.hasan{
+	width: 5*$full;
+	height: 3*$full;
+	background-color: $bacolor;
+	position: relative;
+}
+// body{
+// 	margin: 0;
+// }
+// pre {
+// 		font-size: 2*$sz;
+// 		// $f-$z: 11*$sz;
+// 		border: $brd;
+// 		// width: fit-content;
+// 		// width: auto;
+// 		// width:max-content;
+// 		width: min-content;
+// 		background-color: green;
+// 		// overflow: visible;
+// 		// overflow:auto;
+// 		// overflow:hidden;
+// 		// overflow: scroll;
+// 		// overflow-wrap:break-word;
+// 		// overflow: inherit;
+// 		// overflow: initial;
+// 		// overflow: unset;
+// 		// overflow-x: hidden;
+// 		// overflow-y: hidden;
+// 		overflow-wrap: break-word;
+// }
+
+// // *******************************************
+// // BLOCK :-
+// // -IF no width , It will takes the full 
+// // - ADD line break
+// // -Respect padding, margin, width, Height
+// // *****************************************
+// // *******************************************
+// // INLINE :-
+// // -DONOT Respect  width, Height
+// // -Respect padding, margin [JUST Left + right]
+// // -DONOT ADD line break
+// // Allow elements before and after it
+// // *****************************************
+// // inline-BLOCK :-
+// // *******************************************
+// // Allow elements before and after it.
+// // -Respect padding, margin, width, Height
+// // -DONOT ADD line break
+// // *****************************************
+// // div {
+// 		// #{$f} : 5*$sz;
+// 		// width:fit-content;
+// 		// width: auto;
+// 		// width: max-content;
+// 		// width: min-content;
+// 		// width: 40%;
+// 		// max-width: 400px;
+// 		// min-width: 400px;
+// 		// height: 1.1*$full;
+// 		// background: $rcolor;
+// 		// background-image: url("../images/rose/r.jpg");
+// 		// background-size: 71%;
+// 		// padding: 10px 20px;
+// 		// width:75%;
+// 		// width:min-content;
+// 		// width:max-content;
+// 		// width: auto;
+// 		// width:fit-content;
+// 		// margin: auto;
+// 		// margin: 10%;
+// 		// border: $rcolor $bacolor $scolor $acolor;
+// 		// border: solid dashed dotted double ;
+// 		// border-style: groove hidden;
+// 		// border: $brd;
+// 		// display: none;
+// 		// display:block;
+// 		// display: inline;
+// 		// display: inline-block;
+// 		// display: table-row-group;
+// 		// display: contents;
+// 		// display: flex;
+// 		// display: flexbox;
+// 		// display: flow-root;
+// 		// display: grid;
+// 		// display: inline-flex;
+// // font-style: italic;
+// // font-style: oblique;
+// // font-style: inherit;
+// // font-style: initial;
+// // font-style: normal;
+// // font-style: unset;
+// // font-style: normal;
+// // }
+// div{
+// 	text-transform: uppercase;
+// 	opacity: 0.5;
+// }
+
+// span {
+// 		$bgc:$rcolor;
+// 		padding: $sz;
+// 	}
+// 	p {
+		
+// 		font-variant: small-caps;
+// 		margin: $sz;
+// 		height: $full;
+// 		background-color: $scolor;
+// 		// // visibility:unset;
+// 		// visibility: hidden;
+// }
+
+// // div p{
+// // background-color:$scolor;
+// // }
+// //  p{
+// // background-color:$bacolor;
+// // }
+// // ***************[27]****************
+// .parent .rady{
+// 		background-color: $rcolor;
+// 		padding: $sz;
+// 		// overflow: hidden;
+// 		width: 5*$full;
+// 		height: 3*$full;
+// 		position: relative;
+// }
+
+// .parent div, .malak{
+// 		// padding-top: $sz;
+// 		// padding-bottom: $sz;
+// 		text-align: center;
+// 		background-color: $hcolor;
+// 		padding: inherit;
+// 		// display: inline-block;
+// 		width: calc((100% - 60px)/4);
+// 		margin-left: $sz;
+// 		// float: left;
+// 		position:absolute;
+// 		top:0px ;
+// 		// bottom: 0;
+// 		right: 0;
+// }
+
+
+// .clear {
+// 		clear: both;
+// }

@@ -1,0 +1,47 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+
+<MainWindow>:
+    name: "main"
+    GridLayout:
+        cols:1
+        # size: root.width - 200,root.height - 200
+        # orientation: 'vertical'
+        # spacing: 5
+        # padding: 5
+        # pos: '100dp','100dp'
+        # GridLayout:
+        #     cols:1
+        GridLayout:
+            cols:2
+            Label:
+                text: 'Name: '
+            TextInput:
+                id: name
+                multiline:False
+            Label:
+                text: 'Email: '
+            TextInput:
+                id: email
+                multiline:False
+            Label:
+                text: 'Password: '
+            TextInput:
+                id: password
+                multiline:False
+        Button:
+            text: "submit"
+            # on_press: app.btn()
+            # on_press: root.btn()
+            color: 1,1,0
+            on_release: 
+                app.root.current = "second" if password.text == 'tim' else "main"
+                root.manager.transition.direction = "left"
+<SecondWindow>: 
+    name: "second" 
+    Button:
+        text: "Go back"  
+        on_release: 
+            app.root.current = "main"          
+            root.manager.transition.direction = "right"

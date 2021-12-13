@@ -1,0 +1,99 @@
+/**/
+/*#000080*/
+/*#00FFFF*/
+/*#87CEEB*/
+/*#008080*/
+/*#9ACD32*/
+/*B0E0E6*/
+/*E0FFFF*/
+/*F0FFFF*/
+/*--------------------------*/
+/*#A52A2A*/
+/*F5DEB3*/
+/*#D2691E*/
+/*#*/
+/*FF7F50*/
+/**/
+/*#*/
+/*F5DEB3*/
+/*#F5F5DC*/
+/*--------------------------*/
+/*--------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+  --mozbox-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*--------------------------*/
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+  float: left;
+  padding: 10px;
+  background-color: green;
+  border: 1px solid cyan;
+  text-align: center;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.col-1 {
+  width: 8.33333%;
+  font-size: 17px;
+}
+
+.col-2 {
+  width: 16.66667%;
+  font-size: 18px;
+}
+
+.col-3 {
+  width: 25%;
+  font-size: 19px;
+}
+
+.col-4 {
+  width: 33.33333%;
+  font-size: 20px;
+}
+
+.col-5 {
+  width: 41.66667%;
+  font-size: 21px;
+}
+
+.col-6 {
+  width: 50%;
+  font-size: 22px;
+}
+
+.col-7 {
+  width: 58.33333%;
+  font-size: 23px;
+}
+
+.col-8 {
+  width: 66.66667%;
+  font-size: 24px;
+}
+
+.col-9 {
+  width: 75%;
+  font-size: 25px;
+}
+
+.col-10 {
+  width: 83.33333%;
+  font-size: 26px;
+}
+
+.col-11 {
+  width: 91.66667%;
+  font-size: 27px;
+}
+
+.col-12 {
+  width: 100%;
+  font-size: 28px;
+}
+/*# sourceMappingURL=gridSystem.css.map */

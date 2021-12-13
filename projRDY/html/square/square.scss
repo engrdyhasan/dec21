@@ -1,0 +1,19 @@
+$squares: 32;
+$angle: $pi / ($squares - 1);
+$ratio: 1 / (sin($angle) + cos($angle));
+$size: 100;
+div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px black solid;
+  @for $i from 0 through $squares {
+    &:nth-child(#{$i}) {
+      $s: pow($ratio, $i) * $size;
+      width: #{$s}vmin;
+      height: #{$s}vmin;
+      transform: translate(-50%, -50%) rotate(#{$angle}rad);
+    }
+    $angle: $i * $pi / ($squares - 1);
+  } 
+}

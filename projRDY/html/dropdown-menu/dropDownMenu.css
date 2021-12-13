@@ -1,0 +1,61 @@
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-family:  'Tahoma','Lucida Sans Unicode', 'Lucida Grande','Lucida Sans',Arial , sans-serif ,'Trebuchet MS';
+}
+.navigation {
+	width: 400px;
+	margin: 20px auto;
+	background-color: #F00;
+	padding: 0 20px;
+	min-height: 48px;
+}
+.navigation > li {
+	padding: 15px 10px;
+	float: left;
+}
+.navigation > li a{
+	color: #FFF;
+	text-decoration: none;
+}
+.navigation .menu {
+	position: relative;
+}
+.navigation .menu .submenu {
+	position: absolute;
+	top: 42px;
+	left: 0;
+	width: 220px;
+	background-color: #0ff;
+	padding: 10px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+	-o-box-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+	box-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+	display: none;
+}
+.navigation .submenu li {
+padding: 10px;
+}
+.navigation .submenu li a {
+ color: #777;
+ text-decoration: none;
+}
+.navigation .submenu li a:hover{
+	color: #f00;
+}
+.navigation .submenu:before {
+	content: '';
+	position: absolute;
+	top: -6px;
+	left: 30px;
+	width: 0;
+	height: 0;
+	border-left: 6px groove transparent;
+	border-right: 6px groove transparent;
+	border-bottom: 6px groove #FFF;
+}
+.navigation .menu:hover .submenu {
+display: block;
+}

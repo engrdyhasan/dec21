@@ -1,0 +1,258 @@
+/**/
+/*#000080*/
+/*#00FFFF*/
+/*#87CEEB*/
+/*#008080*/
+/*#9ACD32*/
+/*B0E0E6*/
+/*E0FFFF*/
+/*F0FFFF*/
+/*--------------------------*/
+/*#A52A2A*/
+/*F5DEB3*/
+/*#D2691E*/
+/*#*/
+/*FF7F50*/
+/**/
+/*#*/
+/*F5DEB3*/
+/*#F5F5DC*/
+/*--------------------------*/
+/*---------------------------*/
+/*==================*/
+/*==================*/
+body {
+  font-size: 250px;
+}
+
+body {
+  color: aqua;
+}
+
+body {
+  background: #f00;
+}
+
+/*--------------------------*/
+/*---------------------*/
+.class1, .elzero, .school {
+  font-size: 17px;
+}
+
+.class2 {
+  font-size: 18px;
+}
+
+.class3 {
+  font-size: 19px;
+}
+
+.class4, .elzero, .school {
+  font-size: 20px;
+}
+
+.class5 {
+  font-size: 21px;
+}
+
+.class6 {
+  font-size: 22px;
+}
+
+.class7 {
+  font-size: 23px;
+}
+
+.class8 {
+  font-size: 24px;
+}
+
+.class9 {
+  font-size: 25px;
+}
+
+.class10 {
+  font-size: 26px;
+}
+
+/*-------------------------*/
+.class1, .elzero, .school {
+  font-size: 18px;
+}
+
+.class2 {
+  font-size: 20px;
+}
+
+.class3 {
+  font-size: 22px;
+}
+
+.class4, .elzero, .school {
+  font-size: 24px;
+}
+
+.class5 {
+  font-size: 26px;
+}
+
+.class6 {
+  font-size: 28px;
+}
+
+.class7 {
+  font-size: 30px;
+}
+
+.class8 {
+  font-size: 32px;
+}
+
+.class9 {
+  font-size: 34px;
+}
+
+/*-------------------------*/
+body {
+  direction: rtl;
+}
+
+.main, .class1, .elzero, .school {
+  font-size: 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  padding: 10px;
+  margin: 10px;
+  background: 1px solid AZURE;
+}
+
+.class1, .elzero, .school {
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -o-border-radius: 25px;
+  -ms-border-radius: 25px;
+  border-radius: 25px;
+  font-size: 15px;
+  background-color: navy;
+  width: 25%;
+  float: right;
+}
+
+.class2 {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  background-color: cyan;
+  width: 25%;
+  float: right;
+}
+
+.class3 {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  font-size: 22px;
+  background-color: skyblue;
+  width: 25%;
+  float: right;
+}
+
+.class4, .elzero, .school {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  background-color: Teal;
+  width: 25%;
+  float: right;
+}
+
+.parent, .elzero, .school {
+  font-size: 15px;
+  background: url("../../../../tools/images/r.jpg");
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -o-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+}
+
+header {
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  -ms-border-radius: 7px;
+  border-radius: 7px;
+  background: lightcyan;
+  background-size: cover;
+  color: Beige;
+}
+
+header .navbar {
+  /* as example */
+  /* as example */
+  overflow: hidden;
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+header .navbar .navbar {
+  color: wheat;
+}
+
+header .navbar .navbar .logo {
+  font-size: 24px;
+}
+
+header .navbar .navbar .links {
+  float: left;
+}
+
+header .navbar .navbar .links i {
+  margin-left: 5px;
+}
+
+header .navbar {
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.class2, header .navbar {
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  --mozbox-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.elzero, .school {
+  font-size: large;
+}
+
+.elzero .myspan, .school .myspan {
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  color: green;
+}

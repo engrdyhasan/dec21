@@ -1,0 +1,262 @@
+.theme {
+  background: Green;
+  -webkit-box-shadow: 0 0 1px rgba(0, 128, 0, 0.25);
+          box-shadow: 0 0 1px rgba(0, 128, 0, 0.25);
+  color: #fff;
+}
+
+.class1 {
+  font-size: 11px;
+  background: #2980b8;
+  border-top: scale(#2980b9, 0.125);
+  background-color: #2980b9;
+  color: #2980b9;
+  border-top-left-radius: #b929b0;
+  border-top-right-radius: #3a80ae;
+  border-right: #409ad5;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove rgba(41, 128, 185, 0.2);
+}
+
+.class2 {
+  font-size: 12px;
+  background: #297fb8;
+  border-top: scale(#2980b9, 0.25);
+  background-color: #2980b9;
+  color: #2980b9;
+  border-top-left-radius: #b99229;
+  border-top-right-radius: #4c80a2;
+  border-right: #6ab0de;
+  border-bottom: #2980b9;
+  border-left: #2980b9;
+  border: 1px groove rgba(41, 128, 185, 0.4);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.header {
+  background-size: cover;
+}
+
+.card {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+/*/////////function /////////*/
+.navigation .submenu:before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 6px groove transparent;
+  border-right: 6px groove transparent;
+  border-bottom: 6px groove #FFF;
+}
+
+.navigation .menu:hover .submenu {
+  display: block;
+}
+
+body {
+  padding-top: 70px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  background: Powderblue;
+  overflow: hidden;
+}
+
+.header {
+  background: url("/media/engrdy/zero/tools/imgs/rose/r.jpg") no-repeat top center;
+  min-height: 500px;
+  position: relative;
+  padding: 250px;
+}
+
+.overlay {
+  background: yellow;
+  z-index: 99;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  background-color: rgba(79, 158, 158, 0.5);
+}
+
+.header .overlay h1 {
+  font-size: 60px;
+  margin-top: 100px;
+}
+
+.header .overlay .plan {
+  border: 1px groove #E41B17;
+  font-size: 22px;
+  width: 48%;
+  float: left;
+  padding: 20px;
+  margin: 1%;
+}
+
+/*start media Query Section*/
+/* for mobile & Tablet */
+@media (max-width: 420px) {
+  h1 {
+    margin-top: 20px !important;
+  }
+  p {
+    color: cyan !important;
+    font-size: 16px;
+  }
+  .header .overlay .plan {
+    float: none;
+    margin: 0 auto 20px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 421px) and (max-width: 767px) {
+  p {
+    color: red;
+    font-size: 22px;
+  }
+  .header .overlay .plan {
+    float: none;
+    margin: 10px auto;
+  }
+}
+
+/* for small screen  */
+@media (min-width: 768px) and (max-width: 991px) {
+  p {
+    color: blue;
+    font-size: 32px;
+  }
+  .container {
+    width: 750px;
+  }
+}
+
+/* for medium screen*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  p {
+    color: green;
+    font-size: 42px;
+  }
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  p {
+    color: yellow;
+    font-size: 60px;
+  }
+  .container {
+    width: 1170px;
+  }
+}
+
+.container {
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.txt-cntr {
+  text-align: center;
+}
+
+/*end media Query Section*/
+/*engrhassan*/
+.card {
+  width: 300px;
+  height: 330px;
+  margin: 50px auto;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.card:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.card > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: Orange;
+  color: navy;
+  border-radius: 10px;
+  border: 1px groove #E41B17;
+  font-family: "Droid Arabic Kufi", serif, sans-serif, "Open Sans", "Tahoma Arial sans-serif Verdana, Geneva, Tahoma,";
+  text-align: center;
+}
+
+.card.front {
+  z-index: 2;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.card .front header {
+  background-color: Teal;
+  width: 100%;
+  height: 80px;
+  margin-bottom: 55px;
+  border-radius: 10px 10px 0 0;
+}
+
+.card .front img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  top: 25px;
+}
+
+.card .front h3 {
+  margin-bottom: 5px;
+}
+
+.card .front p {
+  margin: 0 auto;
+  width: 90%;
+  line-height: 1.8;
+}
+
+.card .front span {
+  display: inline-block;
+  margin-top: 10px;
+  color: blue;
+  font-weight: bold;
+}
+
+.card .back {
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.card .back ul {
+  padding: 0;
+  list-style: none;
+  line-height: 2;
+}
+/*# sourceMappingURL=card.css.map */

@@ -1,0 +1,158 @@
+
+/*------------------------------*/
+$arfont: "Droid Arabic Kufi", serif, sans-serif, 'Open Sans';
+$enfont: "Tahoma Arial";
+/*------------------------------*/
+$bcolor : #2980b9;
+$bacolor : blue;
+$bbcolor: navy;/*#000080*/
+$bccolor: cyan;/*#00FFFF*/
+$bdcolor: skyblue;/*#87CEEB*/
+$becolor: Teal;/*#008080*/
+$bfolor: green;
+$bgcolor: yellowgreen;/*#9ACD32*/
+$bhcolor: Powderblue;/*B0E0E6*/
+$bicolor: lightcyan;/*E0FFFF*/
+$bjcolor: AZURE;/*F0FFFF*/
+/*--------------------------*/
+$color : red;
+$acolor: Brown;/*#A52A2A*/
+$bcolor: Violet;/*F5DEB3*/
+$ccolor: Chocolate;/*#D2691E*/
+$ecolor: #d35400;
+$dcolor: magenta;/*#*/
+$ecolor: #F7600e;
+$fcolor: coral;/*FF7F50*/
+$gcolor: Orange;/**/
+$hcolor: yellow;/*#*/
+$icolor: wheat;/*F5DEB3*/
+$jColor: Beige;/*#F5F5DC*/
+/*--------------------------*/
+$sz:10px;
+$wdth: 100%;
+$nofElmnt: 4 ;
+$grdNo: 12;
+$full:100px;
+/*---------------------------*/
+
+@if $drtion == ltr {
+    $flotlft: left;
+    $flotrit: right;
+}@else{
+    $flotlft: right;
+    $flotrit: left;
+}
+$prope01 :font;
+$prope02 :size;
+/*---------------------*/
+@mixin brdrdus($r) {
+    -webkit-border-radius: $r;
+    -moz-border-radius: $r;
+    -o-border-radius: $r;
+    -ms-border-radius: $r;
+    border-radius: $r;
+}
+%cover {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+%transision {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+$sociallist:facebook twitter youtube instgram linkedin codepen;
+// @each $social,$color,$hover in {
+//     (facebook , $acolor, $bacolor),
+//     (twitter , $bcolor, $bbcolor),
+//     (youtube, $ccolor, $bccolor),
+//     (instgram, $dcolor, $bdcolor),
+//     (codepen, $ecolor, $becolor)
+//  }
+
+%grid{
+    float: left;
+    padding: ($sz)-(1);
+    background-color: $becolor;
+    border: 1px solid $bbcolor;
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+  
+@for $i from 1 through $grdNo {
+    .col-#{$i}{
+        width: ($wdth /($grdNo/$i));
+        @extend %grid;
+        font-size: $sz+$i;
+    }
+  }
+
+@for $i from 1 through 10 {
+    .class#{$i}
+{
+    font-size: $sz+$i;
+    }}
+@for $i from 1 to 10 {
+    .class#{$i}
+    {
+    font-size: $sz+2*$i;
+    }
+}
+
+$maprdy:(h1:50px, h2:40px, h3:30px, h4:20px, h5:10px, h6:5px); 
+@each $keyrdy,$valrdy in $maprdy {
+  #{$keyrdy} {
+//   font-size: $valrdy + $text;
+  font-size: 2*$sz;
+  }
+}
+$myelement:(defp:50px, enp:40px, arp:30px, cutp:20px); 
+
+@each $elm,$font in $myelement {
+  .#{$elm} {
+//   font-size: $font + $text;
+  font-size: 18px;
+  }
+}
+@function incFont($ele) {
+    $font: 16px;
+    $result:0;
+    @if $ele > $font {
+      $result:50 px;
+    }@else{
+      $result:5 px;
+    }
+    @return $result;
+  }
+  .class1 {
+      @include brdrdus(25px);
+      @extend .main;
+      #{$prope01}-size: 15px;
+      background-color: $bacolor;
+      width: $wdth/$nofElmnt;
+      float: left;
+    }
+    .parent {
+      #{$prope01}-size: 15px;
+      background: url('../../../../tools/images/r.jpg');
+      @include brdrdus(30px);
+  }
+    
+// .#{$social}{
+// .icon-#{$social}{
+//     background: url('images/image-#{$social}.png');
+//     // background: url('images/#{$social}.png');
+//     color: $color;
+//     border: 1px solid $color;
+//     &:hover {background-color: $hover;}
+//     }
+//   }
+
+@function incFont($ele) {
+  @return $ele + 10;
+}

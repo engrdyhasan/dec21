@@ -1,0 +1,155 @@
+// sass --watch main.scss
+// @import "_var";
+@import "_style";
+// *******************************************
+/*start media Query Section*/
+.clearfix {clear: both;}
+
+
+/* for mobile & Tablet */
+@media (max-width:599px ) {
+  h1 {
+    margin-top: 4*$sz !important;
+  }
+  p {
+    color: $bdclr;
+    font-size: 1.6*$sz;
+  }
+  .hidden-xxs {
+    display: none !important;
+  }
+  .header .overlay .plan {
+    float: none;
+    margin:$sz*2 auto !important;
+    font-size: 1.8 * $sz;
+ }
+ 
+ .features {
+   background: $fclr;
+   .feat {
+     float: None;
+     width: 96%;
+     margin-bottom: 30px;
+     p {
+       line-height: 0.9em
+      }    
+    }
+  }
+}
+
+// -------------------
+@media (min-width:600px ) and (max-width:767px ) {
+  h1 {
+    margin-top: 4*$sz !important;
+  }
+
+  p {
+    color: red;
+    font-size: 1.8 * $sz;
+  }
+
+  .hidden-xs {
+    display: none !important;
+  }
+
+  .header .overlay .plan {
+    float: none;
+    margin: $sz auto !important;
+    font-size: 2*$sz;
+  }
+
+  .features {
+    background: $gclr;
+    .feat {
+        float: None;
+        width: 96%;
+        margin-bottom: 30px;
+        p {
+            line-height: 0.9em
+        }    
+    }
+  }
+}
+
+/* for small screen  */
+@media (min-width:768px )and (max-width:991px )
+{
+  p {
+    color: blue;
+    font-size: 2*$sz;
+  }
+  .container {
+    width: 750px;
+  }
+}
+
+/* for medium screen*/
+@media (min-width:992px )and (max-width:1199px )
+{
+  p {
+    color: green;
+    font-size: 2.2*$sz;
+  }
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width:1200px )
+{
+	p {
+    color: $eclr;
+    font-size: 3*$sz;
+  }
+  .container {
+    width: 1170px;
+  }
+}
+
+.fleft {
+  float: left ;
+  // float: right !important;
+}
+.fright {
+  float: right;
+}
+.h1{
+  font-size: 2em;
+}
+.h2{
+  font-size: 1.5em;
+}
+// Start radyFRAMEWORK
+
+// End radyFRAMEWORK
+
+//end media Query Section
+
+// @media print {
+// color:#000 !important;
+// text-shadow:#none !important;
+// background:#transparent !important;
+// -webkit-box-shadow:#none !important;
+// box-shadow:#none !important;
+
+// }
+
+
+// @for $i from 1 through $grdNo {
+//     .col-#{$i} {
+//         width: ($wdth /($grdNo/$i));
+//         padding: ($sz)+($i);
+//         // padding: ($sz)-($i);
+//         font-size: $sz+$i;
+//         background-color: $rclr+ $i*20;
+//         @extend %grid;
+//     }
+// }
+
+// $n: 12;
+// @while $n > 0 {
+//   .col-#{$n} {
+//     width: (100/(12/$n));
+//   }
+//   $n: $n - 1;
+// }

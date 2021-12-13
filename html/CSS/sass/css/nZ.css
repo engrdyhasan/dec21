@@ -1,0 +1,75 @@
+/**/
+/*#000080*/
+/*#00FFFF*/
+/*#87CEEB*/
+/*#008080*/
+/*#9ACD32*/
+/*B0E0E6*/
+/*E0FFFF*/
+/*F0FFFF*/
+/*--------------------------*/
+/*#A52A2A*/
+/*F5DEB3*/
+/*#D2691E*/
+/*#*/
+/*FF7F50*/
+/**/
+/*#*/
+/*F5DEB3*/
+/*#F5F5DC*/
+/*--------------------------*/
+.main, .class1 {
+  padding: 10px;
+  margin: 10px;
+  background: 1px solid AZURE; }
+
+.class1 {
+  font-size: 32px;
+  background-color: navy;
+  width: 25%;
+  float: left; }
+
+.class2 {
+  font-size: 13px;
+  background-color: cyan;
+  width: 25%;
+  float: left; }
+
+.class3 {
+  font-size: 22px;
+  background-color: skyblue;
+  width: 25%;
+  float: left; }
+
+.class4 {
+  font-size: 12px;
+  background-color: Teal;
+  width: 25%;
+  float: left; }
+
+.header {
+  background: navy;
+  background-size: cover;
+  color: Beige; }
+  .header .navbar {
+    overflow: hidden;
+    padding: 20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
+    .header .navbar .navbar {
+      color: wheat; }
+      .header .navbar .navbar .logo {
+        font-size: 24px; }
+      .header .navbar .navbar .links {
+        float: right; }
+        .header .navbar .navbar .links i {
+          margin-left: 5px; }
+
+.class2 {
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
+
+/*# sourceMappingURL=nZ.css.map */

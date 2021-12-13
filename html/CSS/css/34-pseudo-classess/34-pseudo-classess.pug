@@ -1,0 +1,49 @@
+include ../includes/myvar.pug
+include ../includes/mymixin.pug
+doctype 
+html(lag='en') 
+	head 
+		meta(charset='utf-8')
+		meta(name='description' content='Learn pugjs')
+		block pageTitle
+			title abet (v)
+		include  ../includes/styles.pug
+		link(rel="stylesheet", href="34-pseudo-classess.css")
+	body
+		block pageContent 
+			#clockrdy
+				//- span(id="clockrdy" style="color: red; top:70px")	
+				img(class="img-circle" src="../../../images/rose/r.jpg" height="30px" width="30px" )
+			.abstain to keep oneself from drinking, voting 
+			.abstract to abstract the most important points from a long report 
+			hr/ 
+			a(href="https://google.com") link 1
+			a(href="https://twitter.com") link 2
+			a(href="https://youtube.com") link 3
+			hr/
+
+			form(action="")
+				h2.contact-title contact me
+				div 
+					input(class='in', type='text', name='user')
+				input(
+					class='f-c', type='email', name='email')
+				input(class='f-c',
+					type='text',
+					name='subject',
+					style={ 'background': 'green'}
+						)
+				div
+					input(class="ch" type="checkbox")
+					label(for="") Testing Check 
+				button(style= 'background: red; color: white') Send
+				button(style={ 'background': 'green', 'color': 'white'}) Reset
+				//- div 
+				//- 	input()	
+				//- 	input(type='text')	
+				//- div 
+				//- 	input()	
+				//- 	label() Testing Check 
+
+
+			include ../includes/scripts.pug

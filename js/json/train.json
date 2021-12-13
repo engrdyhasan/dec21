@@ -1,0 +1,60 @@
+{	
+	"skills": [
+	["javascript","nodejs"],
+	[ "html","pugjs"],
+	[ "css","B","sass"],
+	["php", "mysql"],
+	"java", "c sharp", "xml"
+], 
+		"skillsProgress" : [
+				{	
+						"arduino"   : "25%",
+						"LINUX"   : "35%",
+						"CLI"   : "35%",
+						"google"   : "15%",
+						"PY:55%": {
+								"kivy"   : "45%",
+								"Tkinter"   : "35%"
+								},
+						"WP:65%": {
+								"PHP"   : "55%",
+								"MYSQL"   : "55%"
+								},
+						"HTML:95%" : {
+								"PUG"   : "45%",
+								"haml"   : "1%"
+								},
+						"CSS:65%":{
+								"B"   : "45%",
+								"SASS"   : "75%"
+								}, 
+						"JS:70%": {
+								"BOM"   : "75%",
+								"DOM"   : "65%",
+								"json"   : "02%",
+								"canvas"   : "25%",
+								"ECMA15"   : "55%",
+								"jQuery"   : "35%",
+								"jslint"   : "01%",
+								"ajax"   : "02%",
+								"XML"   : "02%",
+								"GULP"   : "01%",
+								"VUE"   : "01%",
+								"nodejs"   : "01%",
+								"Electron"   : "1%"
+						}
+				}
+		],
+						"username": "engrdy",
+						"country": "Egypt",
+						"age": 52,
+						"working": false,
+						"identity": null,
+					
+				"adresses": {
+					"KSA": "Malaz",
+					"USA": "California",
+					"Egypt": ["SOHAG","Alex","Assiut","Cairo"]
+				}
+}
+

@@ -1,0 +1,40 @@
+$mytheme: sea;
+@mixin theme($theme: DarkGray) {
+    background: $theme;
+    box-shadow: 0 0 1px rgba($theme, .25);
+    color: #fff;
+}
+.theme {
+  @if $mytheme == fire { 
+      @include theme($theme: DarkRed);
+  }@else if $mytheme == sea {
+      @include theme($theme: DarkBlue);
+  }@else if $mytheme == nature {
+      @include theme($theme: DarkGreen);
+  }@else{
+      @include theme;
+  }
+}
+// ===========
+$light-background: #f2ece4;
+$light-text: #036;
+$dark-background: #6b717f;
+$dark-text: #d2e1dd;
+
+@mixin theme-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $light-background;
+    color: $light-text;
+  } @else {
+    background-color: $dark-background;
+    color: $dark-text;
+  }
+}
+
+.banner {
+  @include theme-colors($light-theme: true);
+  body.dark & {
+    @include theme-colors($light-theme: false);
+  }
+}
+

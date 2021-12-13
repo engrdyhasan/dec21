@@ -1,0 +1,105 @@
+.footer .copyright span,
+.footer h3,
+.testimonials span,
+.about h1 span,
+.navbar-header span {
+  color: #009AFF;
+}
+
+.testimonials .carousel-indicators li.active,
+.dropdown-menu,
+.option-box .color-option{
+  border: 5px solid #009AFF;
+}
+.carousel-indicators .active,
+.dropdown-menu .divider, 
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu,
+.option-box .color-option ul li,
+.option-box .gear-check,
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #009AFF;
+}
+
+.statistics .data,
+.footer a,
+.footer a:hover,
+.footer,
+.subscribe h1,
+.about .lead,
+.navbar-inverse .navbar-brand {
+  color: #888;
+}
+
+.footer .copyright,
+.price-table {
+    background: #888;
+  }
+  .footer .img-thumbnail,
+.price-table .price-box p,
+.price-table .price-box {
+      border: 1px solid #888;
+    }
+
+.dropdown-menu > li > a {color: #FFF;}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #000;
+}
+
+.features {
+  background: #FFF;}
+
+.testimonials .carousel-indicators li {border: 2px solid #FFF;}
+
+
+.price-table .price-box {
+  background: #FFF;
+
+}
+
+.price-table .price-box:hover p {border: 2px solid #FFF;}
+.price-table .price-box p {
+  color: #000;
+  background: #FFF;
+}
+
+.our-team .team {color: #FFF;}
+
+.subscribe {background: #FFF;}
+
+.statistics .data {
+  background-color: #000;
+
+}
+.statistics .stats:hover {color: #FFF;}
+
+.contact-us .fields {
+  background: #000;
+  color: #FFF;
+}
+/* for dark version */
+.contact-us input[type="text"],
+.contact-us textarea {
+  background: #000;
+  color: #FFF;
+}
+/*end Section contact us*/
+/*start Section our clients*/
+.our-clients {background: #FFF;}
+.our-clients img:hover {opacity: 0.4;}
+/*end Section our clients*/
+/*start Ultimate footer Section*/
+.footer {
+    background: #000;   
+}
+.footer .img-thumbnail {
+  background: #000;
+}
+.footer .copyright {
+  color: #FFF;
+}
+

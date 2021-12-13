@@ -1,0 +1,78 @@
+/**/
+/*#000080*/
+/*#00FFFF*/
+/*#87CEEB*/
+/*#008080*/
+/*#9ACD32*/
+/*B0E0E6*/
+/*E0FFFF*/
+/*F0FFFF*/
+/*--------------------------*/
+/*#A52A2A*/
+/*F5DEB3*/
+/*#D2691E*/
+/*#*/
+/*FF7F50*/
+/**/
+/*#*/
+/*F5DEB3*/
+/*#F5F5DC*/
+/*--------------------------*/
+/*--------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+  --mozbox-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.icon-facebook {
+  background: url("images/image-facebook.png");
+  color: Brown;
+  border: 1px solid Brown;
+}
+
+.icon-facebook:hover {
+  background-color: navy;
+}
+
+.icon-twitter {
+  background: url("images/image-twitter.png");
+  color: Violet;
+  border: 1px solid Violet;
+}
+
+.icon-twitter:hover {
+  background-color: cyan;
+}
+
+.icon-youtube {
+  background: url("images/image-youtube.png");
+  color: Chocolate;
+  border: 1px solid Chocolate;
+}
+
+.icon-youtube:hover {
+  background-color: skyblue;
+}
+
+.icon-instgram {
+  background: url("images/image-instgram.png");
+  color: magenta;
+  border: 1px solid magenta;
+}
+
+.icon-instgram:hover {
+  background-color: Teal;
+}
+
+.icon-codepen {
+  background: url("images/image-codepen.png");
+  color: coral;
+  border: 1px solid coral;
+}
+
+.icon-codepen:hover {
+  background-color: green;
+}
+/*# sourceMappingURL=training.css.map */

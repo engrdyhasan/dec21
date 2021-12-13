@@ -1,0 +1,187 @@
+// $drtion: ltr;
+@import "_var";
+@import "_media";
+*{
+  -webkit-box-sizing: border-box;
+  --mozbox-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {  
+  padding-top: 40px;
+  font-family :$enfont;
+  background: $becolor;
+  direction: $drtion;
+  color: $bacolor;
+  width: 10*$full;
+}
+.container {
+width: 12 * $full;
+margin: 2*$sz auto;
+background: $bicolor;
+  position: relative; 
+}
+.header {
+  @include brdrdus(7px);
+  background: $bhcolor;
+  color: $icolor;
+  min-height: $full;
+  background-size: cover;
+  overflow: hidden;
+  .navbar {
+      @extend %cover; 
+      @extend %transision; 
+      overflow: hidden;
+      padding: 20px 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    color: $hcolor;
+    width: 80%;
+    float: left; 
+          ul {
+                  margin: .5*$full 5*$sz 0 0;
+                  font-weight: bold;
+                  font-size: 1.8 * $sz;
+              li {
+                      display: inline-block;
+                      padding: $sz;
+                      margin: $sz / 2;
+                  }
+              }
+          .logo {
+              font-size: 24px;
+              width: 20%;
+              float: right; 
+              img {
+                  height: $full;
+                  margin: 2 * $sz;
+              }
+          }
+          .links {
+              float: right;
+              i {
+                  margin-left: 5px;
+              }
+          }
+        }
+}
+// ul, ol
+// {
+// 	margin: 0;
+// 	padding: 0;
+// 	list-style: none;
+// }
+.main {
+  font-#{$prope02}: 15px;
+  @include brdrdus(2px);
+  padding: 10px;
+  margin: 10px;
+  background: 1px solid $bicolor;
+}
+.table { 
+height: 100%;
+display: table;   
+}
+/*Start Content*/
+.content
+{
+min-height: 5*$full;
+background:$bccolor; 
+overflow: hidden;
+  .sidebar
+  {
+      float: right;
+      width: 25%;
+      margin-left: 1%;
+      height:5*$full;
+      .widget
+      {
+          width: 90%;
+          background:#fff; 
+          border:1px solid $bccolor;
+          margin: $sz auto; 
+          .title
+          {
+              background:$bccolor; 
+              color: #FFF;
+              padding:$sz/2 0;
+              text-align: center;
+          }
+          .data 
+          {
+              text-align: center;
+              padding: $sz/2 0;
+              img
+              {
+                      /*padding-right: :10PX 0;*/
+                  max-width:80%;
+                  margin: $sz/2 auto;
+              }
+          }
+          .data ul 
+          {
+              text-align: right;
+              li
+              {
+                  padding-right: $sz/2 0;
+              }
+          }
+      }
+  }
+  .product
+  {
+      float: left;
+    //   width: 74%;
+      padding: 0 0 $sz 0;
+      .product
+      {
+          width: 22%;
+          height:   1.5 * $full; 
+          margin-left: 3%;
+          margin-top: 2*$sz;
+          float: right;
+          text-align: center;
+          background-color: $bdcolor;
+          img
+          {
+              max-width: 100%;
+          }
+      }
+  }
+}
+/*End Content*/
+/*Start Footer*/
+footer{
+min-height: $full;
+background:$bbcolor ; 
+  .info
+  {
+      background: $bccolor;
+      overflow: hidden;
+      .box
+      {
+          width: auto;
+          float: right;
+          margin-left: 1%;
+      }
+      ul
+      {
+          margin:$sz 			
+      }
+      h3
+      {
+          border-bottom: $sz/5 solid $bccolor;
+      }
+  }
+  .copyright
+  {
+      background: $bdcolor;
+      padding: $sz 0;
+      color: $bicolor;
+      text-align: center; 
+    }
+}
+// End Footer
+/*# sourceMappingURL=home.css.map */

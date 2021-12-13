@@ -1,0 +1,53 @@
+
+/*start media Query Section*/
+/* for mobile & Tablet */
+@media (max-width:767px )
+{
+  .navbar-inverse .navbar-nav> li > a 
+  {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .subscribe .form-control
+  {
+    margin: 20px auto;
+    width: 400px;
+  }
+}
+/* for small screen  */
+@media (min-width:768px )and (max-width:991px )
+{
+
+}
+/* for medium screen*/
+@media (min-width:992px )and (max-width:1199px )
+{
+
+}
+@media (min-width:1200px )
+{
+	
+}
+
+/*end media Query Section*/
+/*
+++++++++++++++++++
+++++++++++++++++++
+++++++++++++++++++
++++++        +++++
++++++        +++++
++++++        +++++
++++++        +++++
+++++++++++++++++++
+++++++++++++++++++
+++++++++++++++++++
+*/
+/*engrhassan*/
+@media print {
+color:#000 !important;
+text-shadow:#none !important;
+background:#transparent !important;
+-webkit-box-shadow:#none !important;
+box-shadow:#none !important;
+
+}

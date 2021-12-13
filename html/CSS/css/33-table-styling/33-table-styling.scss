@@ -1,0 +1,21 @@
+@import "/media/engrdy/zero/github2021/html/sassrdy/_media";
+.clock {
+		background-color: $bfclr;
+}
+table{
+	width: 100%;
+	border-spacing: 0;
+}
+table td {
+	padding: 15px;
+	background-color: $bfclr;
+	border: $brd;
+	// color: $rcolor;
+}
+table thead td {
+	background-color: $bfclr;
+	color: #FFF;
+	font-weight: bold;
+	text-align: center;
+	border-color: $fclr;
+}
