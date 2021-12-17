@@ -1,0 +1,270 @@
+// sass --watch main.scss
+$arfont: "Droid Arabic Kufi",serif,sans-serif,
+'Open Sans';
+$enfont: "'Droid Sans',sans-serif Tahoma Arial  Verdana, Geneva";
+// *********************
+$baclr: navy;
+$bbclr: blue;
+$bcclr: cyan;
+$bdclr: #2980b9;
+$beclr: green;
+$bfclr: skyblue;
+$bgclr: Powderblue;
+$bhclr: lightcyan;
+$biclr: AZURE;
+// ***********************
+$aclr: Brown;
+$bclr: #E41B17;
+$cclr: magenta;
+$dclr: Violet;
+$eclr: Chocolate;
+$fclr: Orange;
+$gclr: yellow;
+$hclr: wheat;
+$iclr: Beige;
+
+// ***********************
+$sz:10px;
+$ful:100px;
+$fwd: 100%;
+$no: 4;
+$grdNo: 12;
+// *****************
+$f :font;
+$z :size;
+$brd: 1px groove $bclr;
+// ************************
+%bxsz {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+%cover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+%transision {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+%ptrnsn {
+    -webkit-transition: padding .5s ease-in-out;
+    -moz-transition: padding .5s ease-in-out;
+    -o-transition: padding .5s ease-in-out;
+    transition: padding .5s ease-in-out;
+}
+
+%grid {
+    // float: $flotlft;
+    border: $brd;
+    text-align: center;
+    font-weight: bold;
+}
+
+@mixin brdrdus($r) {
+    -webkit-border-radius: $r;
+    -moz-border-radius: $r;
+    -o-border-radius: $r;
+    -ms-border-radius: $r;
+    border-radius: $r;
+}
+ 
+$drtion: ltr;
+$flft: left;
+$frit: right;
+@if $drtion == rtl {
+    $flft: right;
+    $frit: left;
+    body {
+    font-family :$arfont;}
+}@else{
+    $flft: left;
+    $frit: right;
+    body {
+      font-family :$enfont;}
+    
+}
+// $theme : fire;
+// $mclr: red;
+// .style{
+// @if $theme == fire {
+//     $mclr: red;
+// } @else if $theme == sea {
+// 	$mclr: blue;
+// } @else if $theme == nature {
+// 	$mclr: green;
+// } @else {
+// 	$mclr: brown;
+// }
+// }
+
+$mytheme: nature;
+@mixin theme($theme: Gray) {
+    background: $theme;
+    box-shadow: 0 0 1px rgba($theme, .25);
+    color: #fff;
+}
+.theme {
+  @if $mytheme == fire { 
+      @include theme($theme: Red);
+  }@else if $mytheme == sea {
+      @include theme($theme: Blue);
+  }@else if $mytheme == nature {
+      @include theme($theme: Green);
+  }@else{
+      @include theme;
+  }
+}
+// @for $i from 1 through 2 {
+// .class#{$i}{
+   	// font-size: $sz+$i;
+    // background: darken($theme, $i/8);
+    // border-top: scale($theme, $i/8);
+    // background-color: saturate($theme, $i/8);
+    // color: desaturate($theme, $i/8);
+    // border-top-left-radius:adjust-hue($theme, 100*$i) ;
+    // border-top-right-radius:invert($theme, $weight: $i*10%);
+    // border-right:lighten($theme, 10*$i);
+    // border-top:mix($theme, $i, $weight: 50%);
+    // border-bottom-left-radius:complement($theme/$i) ;
+    // border-bottom-right-radius:grayscale($theme/$i) ;
+    // border-bottom:opacify($theme, $i/10);
+    // border-left:fade-in($theme, $i/8) ;
+    // border: 1px groove opacify(rgba($theme, $i/10), $i* 0.1);
+    // 	}
+    // }
+   
+// $flotlft: left;
+// $flotrit: right;
+// @if $drtion == ltr {
+//     $flotlft: left;
+//     $flotrit: right;
+//     body {
+//       font-family :$enfont;}
+// }@else{
+//     $flotlft: right;
+//     $flotrit: left;
+//     body {
+//     font-family :$arfont;}
+// }
+// *****************
+// ul,li {
+// 	padding: 0;
+// 	margin: 0;
+// 	list-style: none;
+// 	font-family:  'Tahoma';
+// }
+// Start section loading 
+//  end section loading 
+// h1, h2, h3, h4, h5, .lead {font-family: 'Droid Sans', sans-serif}
+// ////////****************************************
+// @for $i from 1 through 6 {
+// 	.class#{$i}{
+// 	font-size: $sz+$i;
+// 	}
+// }
+// @for $i from 7 to 12 {
+// 	.class#{$i}
+// 	{
+// 	font-size: $sz+2*$i;
+// 	}
+// }
+// ***********************
+// $x: 12;
+// @while $x > 0 {
+// 	.col-#{$x} {
+// 		width: (100%/(12/$x));
+// 	}
+// 	$x: $x - 1;
+// }
+// **/*-++-*/*-+-*/-/
+// ******************
+// .rady{clr: red;}
+// .hassan{
+// 	@extend .rady;
+// 	// $f-$z: 44px;
+// }
+// .aly{
+// 	font: 12px;
+// 	@import "_bfor.scss";
+// }
+// ***********************
+// $sociallist: telegram facebook twitter youtube instgram linkedin codepen ;
+// @each $social in $sociallist{
+// 	.#{$social}{
+//     background: url('images/image-#{$social}.png');
+//     clr: $sclr;
+//     border: $brd;
+//     &:hover {background-clr: $aclr;}
+//   }}
+// $sociallist:(facebook , $aclr, $baclr),
+//     (twitter , $bclr, $bbclr),
+//     (youtube, $cclr, $bcclr),
+//     (instagram, $dclr, $bdclr),
+//     (instagram, $dclr, $bdclr),
+//     (codepen, $eclr, $beclr);
+// @each $social,$aclr,$hover in $sociallist {
+// 	.icon-#{$social}{
+// 		background: url('images/image-#{$social}.png');
+// 		color: $rclr;
+// 		border: $brd;
+// 		&:hover {
+// 			background-color: $hover;
+// 		}
+// 	}
+// }
+// ****************
+// $maprdy:(h1:50px, h2:40px, h3:30px, h4:20px, h5:10px, h6:5px); 
+// @each $keyrdy,$valrdy in $maprdy {
+//   #{$keyrdy} {
+//   #{$f}-#{$z}: $valrdy + 2*$sz;
+//   }
+// }
+// ********************
+// $myelement:(defp:16px, enp:18px, arp:22px, cutp:26px); 
+// @each $elm,$font in $myelement {
+//   .#{$elm} {
+// #{$f}-#{$z}: $font  + $sz;
+//   }
+// }
+// ***************
+// @function incFont($ele) {
+//   @return $ele + 16;
+// }
+// .rady {
+// 	font-size: incFont(10px);
+// } 
+// */*-*/*-*/*-*/*-*//*-*/-*/*-/*---//*-*/-*/
+// */*-*/*-*/*-*/*-*//*-*/-*/*-/*---//*-*/-*/
+// */*-*/*-*/*-*/*-*//*-*/-*/*-/*---//*-*/-*/
+// */*-*/*-*/*-*/*-*//*-*/-*/*-/*---//*-*/-*/
+// @function rdyFont($ele) {
+//     $font: 16px;
+//     $result:10px;
+//     @if $ele > $font {
+//       $result:30 px;
+//     }@else{
+//       $result:15 px;
+//     }
+//     @return $result;
+//   } 
+// *****************************
+// .rady {
+// 	font-size: rdyFont(10px);
+// } 
+
+/*/////////function /////////*/
+
+// @function incFont($ele) {
+//   @return $ele + 16;
+// }
+// .rady {
+//     font-size: incFont(10px);
+// }

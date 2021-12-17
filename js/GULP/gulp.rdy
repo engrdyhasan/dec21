@@ -1,14 +1,24 @@
+lsb_release -a 
+gulp --tasks
+*************************
 sudo apt-get install python-software-properties
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install nodejs
+sudo apt update
 ****************gulp*******************************
+npm i gulp -g
 npm install -g gulp-cli
-mkdir my-project && cd my-project
+*********************************mkdir my-project && cd my-project
 npm init
 npm install --save-dev gulp
-npm install grunt-contrib-jshint –save-dev
+npm install node-sass
+npm install sass gulp-sass --save-dev
+npm install --save-dev sass
 **************
 npm install --save-dev gulp-concat
 ​******************
-
-
+npm install --save-dev gulp-autoprefixer
+#############################
+mkdir my-project && cd my-project
+npm init
+npm install gulp -g gulp-cli --save-dev gulp  --save-dev gulp-concat gulp-sass --save-dev  --save-dev gulp-autoprefixer

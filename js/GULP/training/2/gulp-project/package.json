@@ -1,0 +1,22 @@
+{
+  "name": "rady",
+  "version": "1.0.0",
+  "description": "my Gulp project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rady hasan",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-concat": "^2.6.1",
+    "postcss": "^8.4.5"
+  },
+  "dependencies": {
+    "gulp-cli": "^2.3.0",
+    "gulp-util": "^3.0.8"
+  }
+}
