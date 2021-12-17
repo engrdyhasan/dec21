@@ -7,7 +7,20 @@ from kivy.core.window import Window
 # from kivy.properties import ObjectProperty
 # from kivy.garden.mapview import MapView
 # ===========
-
+from kivy.utils import pi_version
+from copy import deepcopy
+import os
+from os.path import join, dirname, sep, exists, basename, isdir
+from os import walk, environ, makedirs
+from distutils.command.build_ext import build_ext
+from distutils.version import LooseVersion
+from distutils.sysconfig import get_python_inc
+from collections import OrderedDict
+from time import sleep
+from sysconfig import get_paths
+from pathlib import Path
+import logging
+from setuptools import setup, Extension, find_packages
 # from os import curdir
 # import kivy
 # from glob import glob

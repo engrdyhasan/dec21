@@ -1,4 +1,5 @@
 admins = ['Ahmed','Osama','Sameh','Manal','Rahma','Mahmoud','Enas']
+n = len(admins)
 name = input('please type your name:    ').strip().capitalize()
 if name in admins:
     print(f' Hello {name} welcome back ')
@@ -22,7 +23,7 @@ else:
     status = input("Add you Y,N ?").strip().capitalize()
     if status == "Yes" or  status == "Y":
         print('You are added.')
-                admins.append(name)
-                print(admins)
+        admins.append(name)
+        print(admins)
     else:
         print('Thank You 4 your pass')
