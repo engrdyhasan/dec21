@@ -18,10 +18,10 @@ from kivy.uix.label import Label
 # from kivy.uix.textinput import TextInput 
 # from kivy.utils import rgba
 Window.clearcolor = (0.15,0.45,0.515,0.30)
-Window.size = (400,600)
+# Window.size = (400,600)
 class DateApp(Label):
     def build(self):
-Window.size = (360, 600)
+# Window.size = (360, 600)
 Builder.load_string('''
 <MenuPage>: 
     BoxLayout:
